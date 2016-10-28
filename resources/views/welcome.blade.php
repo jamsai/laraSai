@@ -40,6 +40,7 @@
             <div class="content">
                 <div class="title">Laravel 5</div>
                 <div class="title">Test Update Script :v</div>
+                <div class="title">Test Update Script :D</div>
             </div>
         </div>
     </body>
