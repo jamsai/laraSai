@@ -38,9 +38,9 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
-                <div class="title">Test Update Script :v</div>
-                <div class="title">Test Update Script :D</div>
+                <div class="title">Hi.I'm Jamsai</div>
+                <div class="title">Version. Beta</div>
+                <div class="title">I've Script Update :D</div>
             </div>
         </div>
     </body>
