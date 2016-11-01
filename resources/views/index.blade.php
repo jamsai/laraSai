@@ -35,7 +35,7 @@ Done
     <meta name="author" content="Emily and the gang.">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{assets/images/favicon.ico}}" />
 
     <!-- Bootstrap CDN -->
     <link rel='stylesheet prefetch' href='{{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css}}'>
