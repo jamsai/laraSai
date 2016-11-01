@@ -40,7 +40,6 @@
             <div class="content">
                 <div class="title">Hi.I'm Jamsai</div>
                 <div class="title">Version. Beta</div>
-                <div class="title">Testing Script Processs</div>
                 <div class="title">I've Script Update :D</div>
             </div>
         </div>
