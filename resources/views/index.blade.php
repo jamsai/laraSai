@@ -13,12 +13,13 @@ Not forget it
 Current Requirement
 
 - Add logged as user to navbar
-- Add Site Description
-- localize CDN
-- edit Header Photo to some great material
+- Log in modal
 
 Done
 
+# edit Header Photo to some great material
+# Add Site Description
+# localize CDN
 # init webfont
 # Pick some cool palette
 # Design jamsai icon
@@ -30,21 +31,21 @@ Done
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ควย</title>
+    <title>เจ็ดใส</title>
     <meta name="description" content="แจ่มใส | ที่เดียวที่รวบรวมทุกแต้มสะสมร้านอาหารและร้านค้า มาร่วมสัมผัสประสบการณ์ใหม่แห่งความสะดวกสบายไปกับเรา">
     <meta name="author" content="Emily and the gang.">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{assets/images/favicon.ico}}" />
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
 
     <!-- Bootstrap CDN -->
-    <link rel='stylesheet prefetch' href='{{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css}}'>
-    <link rel='stylesheet prefetch' href='{{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css}}'>
+    <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='css/bootstrap-theme.min.css'>
 
     <!-- Main Design -->
-    <link rel="stylesheet" href="{{css/style.css}}">
-    <link rel="stylesheet" type="text/css"  href="{{assets/fonts/font.css}}">
-    <link rel="stylesheet" href="{{assets/fonts/awesome/css/font-awesome.min.css}}">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css"  href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/fonts/awesome/css/font-awesome.min.css">
 
   </head>
 
@@ -63,7 +64,7 @@ Done
             </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
             <div class="hidden-xs" id="logo"><a href="#header">
-                <img src="{{assets/images/jamsai_logo.svg}}" alt="">
+                <img src="assets/images/jamsai_logo.svg" alt="">
             </a></div>
 
             <ul class="nav navbar-nav navbar-right">
@@ -72,7 +73,7 @@ Done
                 <li><a href="#food-menu">Shops</a></li>
                 <li><a href="#special-offser">Deals</a></li>
                 <li><a href="#reservation">Contact</a></li>
-                <li><a href="#"><font color="#fefa99">Log In</font></a></li>
+                <li><a href="#" data-toggle="modal" data-target="#loginModal" class="page-scroll"><font color="#fefa99">Log In</font></a></li>
 
                 <!--fix for scroll spy active menu element-->
                 <li style="display:none;"><a href="#header"></a></li>
@@ -81,6 +82,61 @@ Done
         </div><!--/.navbar-collapse -->
         </div><!-- container -->
     </div><!-- menu -->
+
+    <!-- Modal -->
+  <div id="loginModal" class="modal fade modal-info">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title">สมัครใช้งาน Jamsai</h2>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="well">
+                  <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                    <div class="form-group">
+                      <label for="username" class="control-label">Username</label>
+                      <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                      <span class="help-block"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="password" class="control-label">Password</label>
+                      <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                      <span class="help-block"></span>
+                    </div>
+                    <div id="loginErrorMsg" class="alert alert-error hide">Username หรือ Password ไม่ถูกต้อง</div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" name="remember" id="remember"> Remember login
+                      </label>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Log in</button>
+                    <p><a href="/forgot/" >ลืมรหัสผ่าน ?</a></p>
+                  </form>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <p>สมัครใช้งานแจ่มใส<font color="#fefa99">ฟรี</font></p>
+                <ul class="list-unstyled" style="line-height: 2">
+                  <li><span class="fa fa-check text-success"></span> สะสมแต้มรางวัล</li>
+                  <li><span class="fa fa-check text-success"></span> ค้นหาโปรโมชั่นใหม่ๆ</li>
+                  <li><span class="fa fa-check text-success"></span> แลกของรางวัลมากมาย</li>
+                  <li><span class="fa fa-check text-success"></span> สิทธิพิเศษเฉพาะผู้ใช้แจ่มใส</li>
+                </ul>
+                <br>
+                <p><a href="/new-customer/" class="btn btn-info btn-block">Sign Up</a></p>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline pull-right" data-dismiss="modal"><font size="4.5rem">ปิด</font></button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 
     <div id="header">
         <div class="bg-overlay"></div>
@@ -543,11 +599,11 @@ Done
         </div>
         <!-- /.container -->
     </footer>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery.actual/1.0.17/jquery.actual.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.1/jquery.scrollTo.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js'></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+<script src='js/jquery.min.js'></script>
+<script src='js/jquery.actual.min.js'></script>
+<script src='js/jquery.scrollTo.min.js'></script>
+<script src='js/bootstrap.min.js'></script>
+<script src='js/modernizr.min.js'></script>
 
         <script src="js/index.js"></script>
 
