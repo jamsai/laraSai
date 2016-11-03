@@ -36,16 +36,21 @@ Done
     <meta name="author" content="Emily and the gang.">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="shortcut icon" href="{{assets/images/favicon.ico}}" />
 
     <!-- Bootstrap CDN -->
+<<<<<<< HEAD
     <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
     <link rel='stylesheet prefetch' href='css/bootstrap-theme.min.css'>
+=======
+    <link rel='stylesheet prefetch' href='{{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css}}'>
+    <link rel='stylesheet prefetch' href='{{http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css}}'>
+>>>>>>> 654c76269361d1a90788ef1eede9ec02ab26cc6f
 
     <!-- Main Design -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css"  href="assets/fonts/font.css">
-    <link rel="stylesheet" href="assets/fonts/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{css/style.css}}">
+    <link rel="stylesheet" type="text/css"  href="{{assets/fonts/font.css}}">
+    <link rel="stylesheet" href="{{assets/fonts/awesome/css/font-awesome.min.css}}">
 
   </head>
 
@@ -64,7 +69,7 @@ Done
             </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
             <div class="hidden-xs" id="logo"><a href="#header">
-                <img src="assets/images/jamsai_logo.svg" alt="">
+                <img src="{{assets/images/jamsai_logo.svg}}" alt="">
             </a></div>
 
             <ul class="nav navbar-nav navbar-right">
