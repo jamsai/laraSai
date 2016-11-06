@@ -31,7 +31,7 @@ Done
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>เจ็ดใส</title>
+    <title>Jamsai | Easy Reward Point Gatherer</title>
     <meta name="description" content="แจ่มใส | ที่เดียวที่รวบรวมทุกแต้มสะสมร้านอาหารและร้านค้า มาร่วมสัมผัสประสบการณ์ใหม่แห่งความสะดวกสบายไปกับเรา">
     <meta name="author" content="Emily and the gang.">
 
@@ -74,10 +74,10 @@ Done
                 <li><a href="#special-offser">Deals</a></li>
                 <li><a href="#reservation">Contact</a></li>
                 @if (Auth::guest())
-                <li><a href="{{ url('/login') }}"><font color="#fefa99">{{ trans('adminlte_lang::message.login') }}</font></a></li>
+                  <li><a href="{{ url('/login') }}"><font color="#fefa99">{{ trans('adminlte_lang::message.login') }}</font></a></li>
                 @else
-				<li><a href="/homes">{{ Auth::user()->name }}</a></li>
-				@endif
+        				  <li><a href="/home">{{ Auth::user()->name }}</a></li>
+        				@endif
                 <!--fix for scroll spy active menu element-->
                 <li style="display:none;"><a href="#header"></a></li>
 
