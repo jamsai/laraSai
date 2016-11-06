@@ -188,7 +188,7 @@ EOTXT
 
         $this->assertStringMatchesFormat(
             <<<EOTXT
-Closed resource @{$res}
+Unknown resource @{$res}
 
 EOTXT
             ,
@@ -196,41 +196,6 @@ EOTXT
         );
     }
 
-    public function testFlags()
-    {
-        putenv('DUMP_LIGHT_ARRAY=1');
-        putenv('DUMP_STRING_LENGTH=1');
-
-        $var = array(
-            range(1, 3),
-            array('foo', 2 => 'bar'),
-        );
-
-        $this->assertDumpEquals(
-            <<<EOTXT
-[
-  [
-    1
-    2
-    3
-  ]
-  [
-    0 => (3) "foo"
-    2 => (3) "bar"
-  ]
-]
-EOTXT
-            ,
-            $var
-        );
-
-        putenv('DUMP_LIGHT_ARRAY=');
-        putenv('DUMP_STRING_LENGTH=');
-    }
-
-    /**
-     * @requires function Twig_Template::getSourceContext
-     */
     public function testThrowingCaster()
     {
         $out = fopen('php://memory', 'r+b');
@@ -265,6 +230,19 @@ EOTXT
         rewind($out);
         $out = stream_get_contents($out);
 
+        if (method_exists($twig, 'getSource')) {
+            $twig = <<<EOTXT
+          foo.twig:2: """
+            foo bar\\n
+              twig source\\n
+            \\n
+            """
+
+EOTXT;
+        } else {
+            $twig = '';
+        }
+
         $r = defined('HHVM_VERSION') ? '' : '#%d';
         $this->assertStringMatchesFormat(
             <<<EOTXT
@@ -286,12 +264,7 @@ stream resource {@{$ref}
                 throw new \Exception('Foobar');\\n
             }\\n
             """
-          bar.twig:2: """
-            foo bar\\n
-              twig source\\n
-            \\n
-            """
-        }
+{$twig}        }
       }
       %d. Twig_Template->displayWithErrorHandling() ==> __TwigTemplate_VarDumperFixture_u75a09->doDisplay(): {
         src: {

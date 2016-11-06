@@ -135,6 +135,8 @@ class QueueManager implements FactoryContract, MonitorContract
             $this->connections[$name] = $this->resolve($name);
 
             $this->connections[$name]->setContainer($this->app);
+
+            $this->connections[$name]->setEncrypter($this->app['encrypter']);
         }
 
         return $this->connections[$name];
@@ -202,7 +204,7 @@ class QueueManager implements FactoryContract, MonitorContract
      */
     protected function getConfig($name)
     {
-        if (is_null($name) || $name === 'null') {
+        if ($name === null || $name === 'null') {
             return ['driver' => 'null'];
         }
 
@@ -260,6 +262,8 @@ class QueueManager implements FactoryContract, MonitorContract
      */
     public function __call($method, $parameters)
     {
-        return $this->connection()->$method(...$parameters);
+        $callable = [$this->connection(), $method];
+
+        return call_user_func_array($callable, $parameters);
     }
 }

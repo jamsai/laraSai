@@ -5,11 +5,9 @@ namespace Illuminate\Foundation\Testing\Concerns;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Http\UploadedFile;
 use Illuminate\Contracts\View\View;
 use PHPUnit_Framework_Assert as PHPUnit;
 use PHPUnit_Framework_ExpectationFailedException;
-use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 use Symfony\Component\HttpFoundation\File\UploadedFile as SymfonyUploadedFile;
 
 trait MakesHttpRequests
@@ -115,18 +113,6 @@ trait MakesHttpRequests
     }
 
     /**
-     * Visit the given URI with a GET request, expecting a JSON response.
-     *
-     * @param string $uri
-     * @param array $headers
-     * @return $this
-     */
-    public function getJson($uri, array $headers = [])
-    {
-        return $this->json('GET', $uri, [], $headers);
-    }
-
-    /**
      * Visit the given URI with a POST request.
      *
      * @param  string  $uri
@@ -141,19 +127,6 @@ trait MakesHttpRequests
         $this->call('POST', $uri, $data, [], [], $server);
 
         return $this;
-    }
-
-    /**
-     * Visit the given URI with a POST request, expecting a JSON response.
-     *
-     * @param string $uri
-     * @param array  $data
-     * @param array  $headers
-     * @return $this
-     */
-    public function postJson($uri, array $data = [], array $headers = [])
-    {
-        return $this->json('POST', $uri, $data, $headers);
     }
 
     /**
@@ -174,19 +147,6 @@ trait MakesHttpRequests
     }
 
     /**
-     * Visit the given URI with a PUT request, expecting a JSON response.
-     *
-     * @param string $uri
-     * @param array  $data
-     * @param array  $headers
-     * @return $this
-     */
-    public function putJson($uri, array $data = [], array $headers = [])
-    {
-        return $this->json('PUT', $uri, $data, $headers);
-    }
-
-    /**
      * Visit the given URI with a PATCH request.
      *
      * @param  string  $uri
@@ -204,19 +164,6 @@ trait MakesHttpRequests
     }
 
     /**
-     * Visit the given URI with a PATCH request, expecting a JSON response.
-     *
-     * @param string $uri
-     * @param array  $data
-     * @param array  $headers
-     * @return $this
-     */
-    public function patchJson($uri, array $data = [], array $headers = [])
-    {
-        return $this->json('PATCH', $uri, $data, $headers);
-    }
-
-    /**
      * Visit the given URI with a DELETE request.
      *
      * @param  string  $uri
@@ -231,19 +178,6 @@ trait MakesHttpRequests
         $this->call('DELETE', $uri, $data, [], [], $server);
 
         return $this;
-    }
-
-    /**
-     * Visit the given URI with a DELETE request, expecting a JSON response.
-     *
-     * @param string $uri
-     * @param array  $data
-     * @param array  $headers
-     * @return $this
-     */
-    public function deleteJson($uri, array $data = [], array $headers = [])
-    {
-        return $this->json('DELETE', $uri, $data, $headers);
     }
 
     /**
@@ -394,7 +328,7 @@ trait MakesHttpRequests
 
             $this->{$method}(
                 Str::contains($actual, $expected),
-                ($negate ? 'Found unexpected' : 'Unable to find').' JSON fragment'.PHP_EOL."[{$expected}]".PHP_EOL.'within'.PHP_EOL."[{$actual}]."
+                ($negate ? 'Found unexpected' : 'Unable to find')." JSON fragment [{$expected}] within [{$actual}]."
             );
         }
 
@@ -449,7 +383,7 @@ trait MakesHttpRequests
             $expected = substr($expected, 0, -1);
         }
 
-        return trim($expected);
+        return $expected;
     }
 
     /**
@@ -573,12 +507,10 @@ trait MakesHttpRequests
 
         $this->resetPageContext();
 
-        $symfonyRequest = SymfonyRequest::create(
+        $request = Request::create(
             $this->currentUri, $method, $parameters,
-            $cookies, $this->filterFiles($files), array_replace($this->serverVariables, $server), $content
+            $cookies, $files, array_replace($this->serverVariables, $server), $content
         );
-
-        $request = Request::createFromBase($symfonyRequest);
 
         $response = $kernel->handle($request);
 
@@ -690,35 +622,6 @@ trait MakesHttpRequests
     }
 
     /**
-     * Filter the given array of files, removing any empty values.
-     *
-     * @param  array  $files
-     * @return mixed
-     */
-    protected function filterFiles($files)
-    {
-        foreach ($files as $key => $file) {
-            if ($file instanceof UploadedFile) {
-                continue;
-            }
-
-            if (is_array($file)) {
-                if (! isset($file['name'])) {
-                    $files[$key] = $this->filterFiles($files[$key]);
-                } elseif (isset($files[$key]['error']) && $files[$key]['error'] !== 0) {
-                    unset($files[$key]);
-                }
-
-                continue;
-            }
-
-            unset($files[$key]);
-        }
-
-        return $files;
-    }
-
-    /**
      * Assert that the client response has an OK status code.
      *
      * @return $this
@@ -766,8 +669,6 @@ trait MakesHttpRequests
 
         if (is_null($value)) {
             PHPUnit::assertArrayHasKey($key, $this->response->original->getData());
-        } elseif ($value instanceof \Closure) {
-            PHPUnit::assertTrue($value($this->response->original->$key));
         } else {
             PHPUnit::assertEquals($value, $this->response->original->$key);
         }

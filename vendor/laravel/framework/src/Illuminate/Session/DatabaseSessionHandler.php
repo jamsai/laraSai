@@ -50,7 +50,7 @@ class DatabaseSessionHandler implements SessionHandlerInterface, ExistenceAwareI
      *
      * @param  \Illuminate\Database\ConnectionInterface  $connection
      * @param  string  $table
-     * @param  int  $minutes
+     * @param  string  $minutes
      * @param  \Illuminate\Contracts\Container\Container|null  $container
      * @return void
      */
@@ -120,8 +120,6 @@ class DatabaseSessionHandler implements SessionHandlerInterface, ExistenceAwareI
         }
 
         $this->exists = true;
-
-        return true;
     }
 
     /**
@@ -132,7 +130,7 @@ class DatabaseSessionHandler implements SessionHandlerInterface, ExistenceAwareI
      */
     protected function getDefaultPayload($data)
     {
-        $payload = ['payload' => base64_encode($data), 'last_activity' => Carbon::now()->getTimestamp()];
+        $payload = ['payload' => base64_encode($data), 'last_activity' => time()];
 
         if (! $container = $this->container) {
             return $payload;
@@ -159,8 +157,6 @@ class DatabaseSessionHandler implements SessionHandlerInterface, ExistenceAwareI
     public function destroy($sessionId)
     {
         $this->getQuery()->where('id', $sessionId)->delete();
-
-        return true;
     }
 
     /**
@@ -168,7 +164,7 @@ class DatabaseSessionHandler implements SessionHandlerInterface, ExistenceAwareI
      */
     public function gc($lifetime)
     {
-        $this->getQuery()->where('last_activity', '<=', Carbon::now()->getTimestamp() - $lifetime)->delete();
+        $this->getQuery()->where('last_activity', '<=', time() - $lifetime)->delete();
     }
 
     /**

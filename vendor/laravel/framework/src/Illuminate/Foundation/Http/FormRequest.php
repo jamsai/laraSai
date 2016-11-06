@@ -7,7 +7,6 @@ use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Redirector;
 use Illuminate\Container\Container;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exception\HttpResponseException;
 use Illuminate\Validation\ValidatesWhenResolvedTrait;
@@ -77,19 +76,12 @@ class FormRequest extends Request implements ValidatesWhenResolved
         $factory = $this->container->make(ValidationFactory::class);
 
         if (method_exists($this, 'validator')) {
-            $validator = $this->container->call([$this, 'validator'], compact('factory'));
-        } else {
-            $validator = $factory->make(
-                $this->validationData(), $this->container->call([$this, 'rules']),
-                $this->messages(), $this->attributes()
-            );
+            return $this->container->call([$this, 'validator'], compact('factory'));
         }
 
-        if (method_exists($this, 'withValidator')) {
-            $this->withValidator($validator);
-        }
-
-        return $validator;
+        return $factory->make(
+            $this->validationData(), $this->container->call([$this, 'rules']), $this->messages(), $this->attributes()
+        );
     }
 
     /**
@@ -108,11 +100,11 @@ class FormRequest extends Request implements ValidatesWhenResolved
      * @param  \Illuminate\Contracts\Validation\Validator  $validator
      * @return void
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws \Illuminate\Http\Exception\HttpResponseException
      */
     protected function failedValidation(Validator $validator)
     {
-        throw new ValidationException($validator, $this->response(
+        throw new HttpResponseException($this->response(
             $this->formatErrors($validator)
         ));
     }
@@ -151,7 +143,7 @@ class FormRequest extends Request implements ValidatesWhenResolved
      */
     public function response(array $errors)
     {
-        if ($this->expectsJson()) {
+        if (($this->ajax() && ! $this->pjax()) || $this->wantsJson()) {
             return new JsonResponse($errors, 422);
         }
 
@@ -163,7 +155,7 @@ class FormRequest extends Request implements ValidatesWhenResolved
     /**
      * Get the response for a forbidden operation.
      *
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return \Illuminate\Http\Response
      */
     public function forbiddenResponse()
     {
