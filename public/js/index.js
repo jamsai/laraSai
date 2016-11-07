@@ -85,7 +85,7 @@ $(document).ready(function() {
 		}
 		);
 	});
-	jQuery('#Scroll2, #Scroll3, #Scroll4, #Scroll5, #Scroll6').click(function(e) {
+	jQuery('#Scroll1, #Scroll2, #Scroll3, #Scroll4, #Scroll5, #Scroll6').click(function(e) {
 		e.preventDefault();
 
 		jQuery.scrollTo(jQuery(this).attr('href'), 400, {

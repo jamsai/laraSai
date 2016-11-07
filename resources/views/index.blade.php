@@ -63,7 +63,7 @@ Done
                 <a class="navbar-brand" href="#"><h2>Jamsai</h2></a>
             </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
-            <div class="hidden-xs" id="logo"><a href="#header">
+            <div class="hidden-xs" id="logo"><a href="#header" id="Scroll1">
                 <img src="assets/images/jamsai_logo.svg" alt="">
             </a></div>
 
