@@ -31,7 +31,7 @@ Done
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>เจ็ดใส</title>
+    <title>Jamsai | Easy Reward Point Gatherer</title>
     <meta name="description" content="แจ่มใส | ที่เดียวที่รวบรวมทุกแต้มสะสมร้านอาหารและร้านค้า มาร่วมสัมผัสประสบการณ์ใหม่แห่งความสะดวกสบายไปกับเรา">
     <meta name="author" content="Emily and the gang.">
 
@@ -68,11 +68,11 @@ Done
             </a></div>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#story">About</a></li>
-                <li><a href="#facts">Stats</a></li>
-                <li><a href="#food-menu">Shops</a></li>
-                <li><a href="#special-offser">Deals</a></li>
-                <li><a href="#reservation">Contact</a></li>
+                <li><a href="#story" id="Scroll2">About</a></li>
+                <li><a href="#facts" id="Scroll3">Stats</a></li>
+                <li><a href="#food-menu" id="Scroll4">Shops</a></li>
+                <li><a href="#special-offser" id="Scroll5">Deals</a></li>
+                <li><a href="#reservation" id="Scroll6">Contact</a></li>
                 @if (Auth::guest())
                   <li><a href="{{ url('/login') }}"><font color="#fefa99">Log in</font></a></li>
                 @else
@@ -602,12 +602,12 @@ Done
         </div>
         <!-- /.container -->
     </footer>
-
+<script src='js/jquery.min.js'></script>
+<script src='js/jquery.actual.min.js'></script>
 <script src='js/jquery.scrollTo.min.js'></script>
 <script src='js/bootstrap.min.js'></script>
 <script src='js/modernizr.min.js'></script>
-
-        <script src="js/index.js"></script>
+<script src="js/index.js"></script>
 
 
 
