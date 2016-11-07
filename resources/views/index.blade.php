@@ -84,9 +84,9 @@ Done
                 <li><a href="#special-offser" id="Scroll5">Deals</a></li>
                 <li><a href="#reservation" id="Scroll6">Contact</a></li>
                 @if (Auth::guest())
-                  <li><a href="{{ url('/login') }}"><font color="#fefa99">Log in</font></a></li>
+                  <li><a href="{{ url('/login') }}"><font color="#fefa99">Log In</font></a></li>
                 @else
-        				  <li><a href="/home">{{ Auth::user()->name }}</a></li>
+        				  <li><a href="{{ url('/logout') }}"><font color="#fefa99">Log Out</font></a></li>
         		    @endif
                 <!--fix for scroll spy active menu element-->
                 <li style="display:none;"><a href="#header"></a></li>
