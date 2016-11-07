@@ -60,11 +60,21 @@ Done
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 </button>
+                @if (Auth::guest())
                 <a class="navbar-brand" href="#"><h2>Jamsai</h2></a>
+                @else
+                <a class="navbar-brand" href="#"><h2>{{ Auth::user()->score }} points</h2></a>
+                @endif
             </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
             <div class="hidden-xs" id="logo"><a href="#header" id="Scroll1">
+                @if (Auth::guest())
                 <img src="assets/images/jamsai_logo.svg" alt="">
+                @else
+                <div class="social">
+                  <div class="link facebook stattrakfade"><span><br><font size=30px color=#fefa99>{{ Auth::user()->score }}</font><br>points</span></div>
+                </div>
+                @endif
             </a></div>
 
             <ul class="nav navbar-nav navbar-right">
@@ -77,68 +87,13 @@ Done
                   <li><a href="{{ url('/login') }}"><font color="#fefa99">Log in</font></a></li>
                 @else
         				  <li><a href="/home">{{ Auth::user()->name }}</a></li>
-        		@endif
+        		    @endif
                 <!--fix for scroll spy active menu element-->
                 <li style="display:none;"><a href="#header"></a></li>
-
             </ul>
         </div><!--/.navbar-collapse -->
         </div><!-- container -->
     </div><!-- menu -->
-
-    <!-- Modal -->
-  <div id="loginModal" class="modal fade modal-info">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h2 class="modal-title">สมัครใช้งาน Jamsai</h2>
-        </div>
-        <div class="modal-body">
-            <div class="row">
-              <div class="col-xs-6">
-                <div class="well">
-                  <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
-                    <div class="form-group">
-                      <label for="username" class="control-label">Username</label>
-                      <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
-                      <span class="help-block"></span>
-                    </div>
-                    <div class="form-group">
-                      <label for="password" class="control-label">Password</label>
-                      <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
-                      <span class="help-block"></span>
-                    </div>
-                    <div id="loginErrorMsg" class="alert alert-error hide">Username หรือ Password ไม่ถูกต้อง</div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" name="remember" id="remember"> Remember login
-                      </label>
-                    </div>
-                    <button type="submit" class="btn btn-success btn-block">Log in</button>
-                    <p><a href="/forgot/" >ลืมรหัสผ่าน ?</a></p>
-                  </form>
-                </div>
-              </div>
-              <div class="col-xs-6">
-                <p>สมัครใช้งานแจ่มใส<font color="#fefa99">ฟรี</font></p>
-                <ul class="list-unstyled" style="line-height: 2">
-                  <li><span class="fa fa-check text-success"></span> สะสมแต้มรางวัล</li>
-                  <li><span class="fa fa-check text-success"></span> ค้นหาโปรโมชั่นใหม่ๆ</li>
-                  <li><span class="fa fa-check text-success"></span> แลกของรางวัลมากมาย</li>
-                  <li><span class="fa fa-check text-success"></span> สิทธิพิเศษเฉพาะผู้ใช้แจ่มใส</li>
-                </ul>
-                <br>
-                <p><a href="/new-customer/" class="btn btn-info btn-block">Sign Up</a></p>
-              </div>
-            </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline pull-right" data-dismiss="modal"><font size="4.5rem">ปิด</font></button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
 
 
     <div id="header">
