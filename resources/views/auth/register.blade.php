@@ -71,13 +71,13 @@
 
                             <div class="col-md-6">
                      
-								<select id="type" name="type">                      
-										<option value="0">--Select Type--</option>
+								<select required id="type" name="type">                      
+										<option value="">--Select Type--</option>
 										<option value="1">Customer</option>
 										<option value="2">Shopkeeper</option>
-										</select>
+								</select>
 
-                                @if ($errors->has('password'))
+                                @if ($errors->has('type'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('type') }}</strong>
                                     </span>
