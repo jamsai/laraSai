@@ -22,10 +22,10 @@
 	<!-- bit of a bio; who are you? -->
 	<div class="profile-bio">
 
-		<p align="left">แต้มแจ่มใสของคุณ : {{ Auth::user()->score }} แต้ม<br>
-		E-mail : {{ Auth::user()->email }}<br>
-		เบอร์โทรศัพท์ : {{ Auth::user()->phonenumber }}<br>
-		สมัครสมาชิกแจ่มใสเมื่อ : {{ Auth::user()->created_at }}
+		<p align="left"><font color="#b98eb1">แต้มของคุณ</font>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp {{ Auth::user()->score }} แต้ม<br>
+		<font color="#b98eb1">E-mail</font>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp	 {{ Auth::user()->email }}<br>
+		<font color="#b98eb1">เบอร์โทรศัพท์</font>&nbsp&nbsp&nbsp&nbsp {{ Auth::user()->phonenumber }}<br>
+		<font color="#b98eb1">สมัครสมาชิกเมื่อ</font> {{ Auth::user()->created_at }}
 		</p>
 
 
