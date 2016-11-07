@@ -73,8 +73,11 @@ Done
                 <li><a href="#food-menu">Shops</a></li>
                 <li><a href="#special-offser">Deals</a></li>
                 <li><a href="#reservation">Contact</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#loginModal" class="page-scroll"><font color="#fefa99">Log In</font></a></li>
-
+                @if (Auth::guest())
+                  <li><a href="{{ url('/login') }}"><font color="#fefa99">Log in</font></a></li>
+                @else
+        				  <li><a href="/home">{{ Auth::user()->name }}</a></li>
+        		@endif
                 <!--fix for scroll spy active menu element-->
                 <li style="display:none;"><a href="#header"></a></li>
 
@@ -599,8 +602,7 @@ Done
         </div>
         <!-- /.container -->
     </footer>
-<script src='js/jquery.min.js'></script>
-<script src='js/jquery.actual.min.js'></script>
+
 <script src='js/jquery.scrollTo.min.js'></script>
 <script src='js/bootstrap.min.js'></script>
 <script src='js/modernizr.min.js'></script>
