@@ -65,6 +65,25 @@
                                 @endif
                             </div>
                         </div>
+						
+						<div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+                            <label for="type" class="col-md-4 control-label">Type</label>
+
+                            <div class="col-md-6">
+                     
+								<select id="type" name="type">                      
+										<option value="0">--Select Type--</option>
+										<option value="1">Customer</option>
+										<option value="2">Shopkeeper</option>
+										</select>
+
+                                @if ($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('type') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
