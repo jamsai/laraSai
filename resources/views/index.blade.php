@@ -91,7 +91,7 @@ Done
             </ul>
         </div><!--/.navbar-collapse -->
 
-        <div class="fab-container"><a href="/home" target="_blank">
+        <div class="fab-container"><a href="/home">
             <div tooltip="View My Profile" class="profile fab"></div></a>
           <div tooltip="Back To Top" class="top fab"></div>
         </div>
