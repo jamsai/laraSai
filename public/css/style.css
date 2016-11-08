@@ -251,6 +251,8 @@ section::before,section::after {
     -o-background-size:/*@@prefixmycss->No equivalent*/;
     background-size:cover;
     position:relative;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
     color:#FFF;
 }
 .parallax .inner {
@@ -770,46 +772,73 @@ section::before,section::after {
 /* ==========================================================================
     ETC
 ========================================================================== */
-
-
-.social {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  text-align: center;
-  transform: translateY(-50%);
+.article {
+  background: #F9F9F9;
+  max-width: 70vw;
+  height: 90%;
+  padding: 56px;
+  margin: 20px auto;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
-.social .link {
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  width: 150px;
-  height: 150px;
+.fab-container {
+  margin: 1em;
+  position: fixed;
+  bottom: -72px;
+  right: 0;
+}
+
+.fab {
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background-clip: content-box;
-  padding: 10px;
-  transition: .5s;
-  margin-top: 60px;
-  margin-left: -37px;
-  margin-right: 15px;
-  text-shadow: 0px 2px 3px rgba(0,0,0,0.5);
-  font-size: 30px;
-  opacity: 0.9;
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  position: relative;
+  cursor: pointer;
+  transition: .3s;
 }
-
-.social .link span {
-  display: block;
+.fab:before {
+  content: attr(tooltip);
+  background: #595959;
+  padding: 4px 8px;
+  border-radius: 2px;
   position: absolute;
-  text-align: center;
-  margin-top: 0px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  line-height: 70%;
+  top: 16px;
+  right: 100%;
+  color: white;
+  font-size: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  transition: .3s;
+}
+.fab:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+.fab:hover:before {
+  right: 110%;
+  opacity: 1;
+  visibility: visible;
 }
 
-.social .link.facebook {
-  background-color: #b98eb1;
-  color: white;
+.profile {
+  margin-bottom: 1em;
+}
+.profile:after {
+  background: #3E35B2 url("../assets/images/Profile.svg") center no-repeat;
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: .3s;
+}
+.profile:hover:after {
+  background-image: url("../assets/images/Go.svg");
+  transform: rotate(90deg);
+}
+
+.top {
+  background: #3E35B2 url("../assets/images/Up.svg") center no-repeat;
 }

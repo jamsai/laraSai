@@ -63,19 +63,17 @@ Done
                 @if (Auth::guest())
                 <a class="navbar-brand" href="#"><h2>Jamsai</h2></a>
                 @else
-                <a class="navbar-brand" href="#"><h2>{{ Auth::user()->score }} points</h2></a>
+                <a class="navbar-brand" href="/home"><h2><font color=#fefa99>My Jamsai</font></h2></a>
                 @endif
             </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">
-            <div class="hidden-xs" id="logo"><a href="#header" id="Scroll1">
+            <div class="hidden-xs" id="logo">
                 @if (Auth::guest())
                 <img src="assets/images/jamsai_logo.svg" alt="">
                 @else
-                <div class="social">
-                  <div class="link facebook stattrakfade"><span><br><font size=30px color=#fefa99>{{ Auth::user()->score }}</font><br>points</span></div>
-                </div>
+                <a href="/home"><img src="assets/images/jamsai_logo.svg" alt=""></a>
                 @endif
-            </a></div>
+            </div>
 
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#story" id="Scroll2">About</a></li>
@@ -92,8 +90,14 @@ Done
                 <li style="display:none;"><a href="#header"></a></li>
             </ul>
         </div><!--/.navbar-collapse -->
+
+        <div class="fab-container"><a href="/home" target="_blank">
+            <div tooltip="View My Profile" class="profile fab"></div></a>
+          <div tooltip="Back To Top" class="top fab"></div>
+        </div>
         </div><!-- container -->
     </div><!-- menu -->
+
 
 
     <div id="header">
@@ -563,6 +567,7 @@ Done
 <script src='js/bootstrap.min.js'></script>
 <script src='js/modernizr.min.js'></script>
 <script src="js/index.js"></script>
+<script src="js/backtotop.js"></script>
 
 
 
