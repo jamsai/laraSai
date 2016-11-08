@@ -41,6 +41,8 @@ Route::get('generateRedeemCode', 'ShopController@generateRedeemCode');
 
 Route::get('userRedeem', 'userController@userRedeem');
 
+Route::get('userExchageReward', 'userController@userExchageReward');
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
