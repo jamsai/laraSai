@@ -63,5 +63,11 @@
     <br>
     <input type='submit'>
   </form>
+
+  <br><br><br>
+  <head>Generate promocode</head>
+  <form action='generateRedeemCode' method='get'>
+    <input type='submit'>
+  </form>
 </body>
 </html>

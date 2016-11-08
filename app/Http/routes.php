@@ -33,6 +33,8 @@ Route::get('addPointGET', 'ShopController@addPointGET');
 
 Route::get('removePointGET', 'ShopController@removePointGET');
 
+Route::get('generateRedeemCode', 'ShopController@generateRedeemCode');
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');

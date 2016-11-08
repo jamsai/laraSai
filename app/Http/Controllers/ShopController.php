@@ -88,7 +88,7 @@ class shopController extends Controller
            DB::table('users')
                  ->where('id', $_GET['customerID'])
                  ->update(['score' => $result]);
-    
+
 
           return $_GET['point'] .' remove from ' . $_GET['customerID'] . ': ' . $name . ' : The result is :' . $result;
          }
@@ -115,6 +115,30 @@ class shopController extends Controller
             'expired' => $_GET['bday'],
             'value' => $_GET['value']]);
           return 'Add Complete';
+          }
+        }
+
+    }
+  }
+  public function generateRedeemCode(){{
+        //return $_POST['username'];
+
+        if (Auth::guest()) {
+          return 'pls login';
+        }
+        else {
+          $id = Auth::id();
+          $type = DB::table('users')->where('id', $id)->value('type');
+          if($type == 1){
+            return "You don't have permission!";
+          }
+          else{
+            $chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            $promocode = "";
+            for ($i = 0; $i < 10; $i++) {
+              $promocode .= $chars[mt_rand(0, strlen($chars)-1)];
+            }
+            return $promocode;
           }
         }
 
