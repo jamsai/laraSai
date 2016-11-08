@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/createpromotion', function () {
+    return view('createpromotion');
+});
+
+Route::get('submitpromotion', 'PromotionController@create');
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
