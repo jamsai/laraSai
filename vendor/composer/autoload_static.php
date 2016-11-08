@@ -265,10 +265,9 @@ class ComposerStaticInit71201d43abc02d489b402e396add9790
     );
 
     public static $classMap = array (
-        'AddPhonenumber' => __DIR__ . '/../..' . '/database/migrations/2016_11_07_154912_add_phonenumber.php',
-        'AddUsernamesField' => __DIR__ . '/../..' . '/database/migrations/2016_11_07_152831_add_usernames_field.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreatePromotionsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_07_142148_create_promotions_table.php',
+        'CreateRedeemcodeTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_08_180313_create_redeemcode_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',

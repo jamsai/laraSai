@@ -67,6 +67,12 @@
   <br><br><br>
   <head>Generate promocode</head>
   <form action='generateRedeemCode' method='get'>
+    <br>
+    <label>
+      value:
+      <input = name='amoutOfRedeemValue' type='text'>
+    </label>
+    <br>
     <input type='submit'>
   </form>
 </body>
