@@ -1,0 +1,16 @@
+body{
+	background:#fefa99;
+	background:-webkit-linear-gradient(90deg, #fefa99 10%, #b98eb1 90%);
+	background:-webkit-linear-gradient(0deg, #fefa99 10%, #b98eb1 90%);
+	background:linear-gradient(90deg, #fefa99 10%, #b98eb1 90%);
+}
+
+input,
+input::-webkit-input-placeholder {
+    line-height: 3;
+		font:400 14px/18px Roboto, sans-serif;
+}
+
+.control-label,.form-control,.btn-primary,.btn-link,.checkbox{
+	font:400 14px/18px Roboto, sans-serif;
+}

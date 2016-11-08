@@ -63,7 +63,7 @@ Done
                 @if (Auth::guest())
                 <a class="navbar-brand" href="#"><h2>Jamsai</h2></a>
                 @else
-                <a class="navbar-brand" href="/home"><h2><font color=#fefa99>My Jamsai</font></h2></a>
+                <a class="navbar-brand" href="/home"><h2><font color=#fefa99>{{ Auth::user()->username }}</font></h2></a>
                 @endif
             </div><!-- navbar-header -->
         <div id="navbar" class="navbar-collapse collapse">

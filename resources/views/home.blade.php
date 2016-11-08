@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="accordion-wrap">
-	<br><br><br><br>
+	<br><br><br>
 <div class="accordion">
 	<a href="#" class="active"><i class="fa fa-user"></i> Profile</a>
 	<div class="sub-nav active">
