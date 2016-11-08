@@ -19,15 +19,17 @@ Route::get('/createpromotion', function () {
     return view('createpromotion');
 });
 
+Route::get('/pointmanagement', function () {
+    return view('pointmanage');
+});
+
 Route::get('submitpromotion', 'PromotionController@create');
 
-<<<<<<< HEAD
+
 Route::get('addPointGET', 'PointController@addPointGET');
 
 Route::get('removePointGET', 'PointController@removePointGET');
 
-=======
->>>>>>> origin/master
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
