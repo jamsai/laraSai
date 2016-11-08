@@ -19,13 +19,7 @@ Route::get('/createpromotion', function () {
     return view('createpromotion');
 });
 
-Route::get('/pointmanagement', function () {
-    return view('pointmanage');
-});
-
 Route::get('submitpromotion', 'PromotionController@create');
-
-Route::get('addPointGET', 'PointController@addPointGET');
 
 Route::auth();
 

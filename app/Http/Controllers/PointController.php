@@ -25,23 +25,6 @@ class PointController extends Controller
 
     }
   }
-
-  public function addPointGET(){{
-     //var_dump($_GET);
-     //return ''.$_GET['customerID'];
-     $score = DB::table('users')->where('id', $_GET['customerID'])->value('score');
-     $name = DB::table('users')->where('id', $_GET['customerID'])->value('name');
-     $result = $score+$_GET['point'];
-
-     DB::table('users')
-           ->where('id', $_GET['customerID'])
-           ->update(['score' => $result]);
-
-
-    return $_GET['point'] .' add to ' . $_GET['customerID'] . ': ' . $name . ' : The result is :' . $result;
-
-  }
-}
     public function remove($id, $point){{
 
       $score = DB::table('users')->where('id', $id)->value('score');
