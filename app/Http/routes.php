@@ -23,12 +23,15 @@ Route::get('/pointmanagement', function () {
     return view('pointmanage');
 });
 
-Route::get('submitpromotion', 'PromotionController@create');
+Route::get('/shopcontrol', function () {
+    return view('shopcontrol');
+});
 
+Route::get('submitpromotion', 'ShopController@createPromotion');
 
-Route::get('addPointGET', 'PointController@addPointGET');
+Route::get('addPointGET', 'ShopController@addPointGET');
 
-Route::get('removePointGET', 'PointController@removePointGET');
+Route::get('removePointGET', 'ShopController@removePointGET');
 
 Route::auth();
 
