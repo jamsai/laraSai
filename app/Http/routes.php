@@ -22,3 +22,9 @@ Route::get('/home', 'HomeController@index');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('addpoint/{id}/{point}',
+
+'AddPointController@add')
+
+->where(['id'=>'[0-9]+', 'point'=>'[0-9]+']);
