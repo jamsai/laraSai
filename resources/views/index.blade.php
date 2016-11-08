@@ -104,7 +104,7 @@ Done
         <div class="bg-overlay"></div>
         <div class="center text-center">
             <div class="banner">
-                <h1 class="">Jamsai แจ่มใสไงจ๊ะ</h1>
+                <h1 class="">JAMSAI | แจ่มใส</h1>
             </div>
             <div class="subtitle"><h4>We do what we must, because we can.</h4></div>
         </div>
