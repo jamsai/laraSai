@@ -17,14 +17,16 @@
 
 
     <style>
-
+    #menu {
+        background:rgba(255,255,255,0.8);
+    }
         .fa-btn {
             margin-right: 6px;
         }
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav id="menu" class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
