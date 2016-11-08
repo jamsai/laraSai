@@ -40,5 +40,21 @@ class PointController extends Controller
 
       }
     }
+    public function removePointGET(){{
+       //var_dump($_GET);
+       //return ''.$_GET['customerID'];
+       $score = DB::table('users')->where('id', $_GET['customerID'])->value('score');
+       $name = DB::table('users')->where('id', $_GET['customerID'])->value('name');
+       $result = $score-$_GET['point'];
+
+       DB::table('users')
+             ->where('id', $_GET['customerID'])
+             ->update(['score' => $result]);
+
+
+      return $_GET['point'] .' remove from ' . $_GET['customerID'] . ': ' . $name . ' : The result is :' . $result;
+
+    }
+  }
 
 }
