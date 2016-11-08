@@ -27,6 +27,10 @@ Route::get('/shopcontrol', function () {
     return view('shopcontrol');
 });
 
+Route::get('/userprofile', function () {
+    return view('userprofile');
+});
+
 Route::get('submitpromotion', 'ShopController@createPromotion');
 
 Route::get('addPointGET', 'ShopController@addPointGET');
@@ -34,6 +38,8 @@ Route::get('addPointGET', 'ShopController@addPointGET');
 Route::get('removePointGET', 'ShopController@removePointGET');
 
 Route::get('generateRedeemCode', 'ShopController@generateRedeemCode');
+
+Route::get('userRedeem', 'userController@userRedeem');
 
 Route::auth();
 
