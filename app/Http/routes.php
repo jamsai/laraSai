@@ -23,11 +23,11 @@ Route::get('/createpromotion', function () {
     return view('createpromotion');
 });
 
-Route::auth();
+// Route::auth();
 
-Route::get('/pointmanagement', function () {
-    return view('pointmanage');
-});
+// Route::get('/pointmanagement', function () {
+//     return view('pointmanage');
+// });
 
 Route::auth();
 
@@ -86,14 +86,14 @@ Route::get('/home', 'HomeController@index');
 
 Route::auth();
 
-Route::get('addpoint/{id}/{point}',
-'PointController@add')
-->where(['id'=>'[0-9]+', 'point'=>'[0-9]+']);
-
-Route::auth();
-
-Route::get('removepoint/{id}/{point}',
-'PointController@remove')
-->where(['id'=>'[0-9]+', 'point'=>'[0-9]+']);
-
-Route::auth();
+// Route::get('addpoint/{id}/{point}',
+// 'PointController@add')
+// ->where(['id'=>'[0-9]+', 'point'=>'[0-9]+']);
+//
+// Route::auth();
+//
+// Route::get('removepoint/{id}/{point}',
+// 'PointController@remove')
+// ->where(['id'=>'[0-9]+', 'point'=>'[0-9]+']);
+//
+// Route::auth();

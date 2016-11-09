@@ -11,32 +11,33 @@ use Illuminate\Support\Facades\Auth;
 
 class shopController extends Controller
 {
-    public function add($id, $point){{
-
-      $score = DB::table('users')->where('id', $id)->value('score');
-      $name = DB::table('users')->where('id', $id)->value('name');
-      $result = $score+$point;
-
-      DB::table('users')
-            ->where('id', $id)
-            ->update(['score' => $result]);
-
-
-      return $point .' add to ' . $id . ': ' . $name . ' : The result is :' . $result;
-
-    }
-  }
+  //   public function add($id, $point){{
+  //
+  //     $score = DB::table('users')->where('id', $id)->value('score');
+  //     $name = DB::table('users')->where('id', $id)->value('name');
+  //     $result = $score+$point;
+  //
+  //     DB::table('users')
+  //           ->where('id', $id)
+  //           ->update(['score' => $result]);
+  //
+  //
+  //     return $point .' add to ' . $id . ': ' . $name . ' : The result is :' . $result;
+  //
+  //   }
+  // }
   public function addPointGET(){{
        //var_dump($_GET);
        //return ''.$_GET['customerID'];
        if (Auth::guest()) {
-         return 'pls login';
+         return redirect("/login");
        }
        else{
          $id = Auth::id();
          $type = DB::table('users')->where('id', $id)->value('type');
          if($type == 1){
-           return "You don't have permission!";
+           return view('permissionErrorStatus')
+           ->with('title', "You don't have permission!");
          }
          else{
            $score = DB::table('users')->where('id', $_GET['customerID'])->value('score');
@@ -47,38 +48,44 @@ class shopController extends Controller
                  ->where('id', $_GET['customerID'])
                  ->update(['score' => $result]);
 
-
-          return $_GET['point'] .' add to ' . $_GET['customerID'] . ': ' . $name . ' : The result is :' . $result;
+          return view('shopProcessAddorRemovePointStatus')
+          ->with('title', "Point is added!")
+          ->with('name', $name)
+          ->with('value', $_GET['point'])
+          ->with('totalPoint', $result)
+          ->with('customerID', $_GET['customerID'])
+          ->with('action', "added");
          }
        }
     }
   }
-    public function remove($id, $point){{
-
-      $score = DB::table('users')->where('id', $id)->value('score');
-      $name = DB::table('users')->where('id', $id)->value('name');
-      $result = $score-$point;
-
-      DB::table('users')
-            ->where('id', $id)
-            ->update(['score' => $result]);
-
-
-      return $point .' remove to ' . $id . ': ' . $name . ' : The result is :' . $result;
-
-      }
-    }
+    // public function remove($id, $point){{
+    //
+    //   $score = DB::table('users')->where('id', $id)->value('score');
+    //   $name = DB::table('users')->where('id', $id)->value('name');
+    //   $result = $score-$point;
+    //
+    //   DB::table('users')
+    //         ->where('id', $id)
+    //         ->update(['score' => $result]);
+    //
+    //
+    //   return $point .' remove to ' . $id . ': ' . $name . ' : The result is :' . $result;
+    //
+    //   }
+    // }
     public function removePointGET(){{
        //var_dump($_GET);
        //return ''.$_GET['customerID'];
        if (Auth::guest()) {
-         return 'pls login';
+         return redirect("/login");
        }
        else{
          $id = Auth::id();
          $type = DB::table('users')->where('id', $id)->value('type');
          if($type == 1){
-           return "You don't have permission!";
+           return view('permissionErrorStatus')
+           ->with('title', "You don't have permission!");
          }
          else{
            $score = DB::table('users')->where('id', $_GET['customerID'])->value('score');
@@ -90,7 +97,13 @@ class shopController extends Controller
                  ->update(['score' => $result]);
 
 
-          return $_GET['point'] .' remove from ' . $_GET['customerID'] . ': ' . $name . ' : The result is :' . $result;
+          return view('shopProcessAddorRemovePointStatus')
+          ->with('title', "Point is removed!")
+          ->with('name', $name)
+          ->with('value', $_GET['point'])
+          ->with('totalPoint', $result)
+          ->with('customerID', $_GET['customerID'])
+          ->with('action', "removed");
          }
        }
     }
@@ -99,13 +112,14 @@ class shopController extends Controller
         //return $_POST['username'];
 
         if (Auth::guest()) {
-          return 'pls login';
+          return redirect("/login");
         }
         else {
           $id = Auth::id();
           $type = DB::table('users')->where('id', $id)->value('type');
           if($type == 1){
-            return "You don't have permission!";
+            return view('permissionErrorStatus')
+            ->with('title', "You don't have permission!");
           }
           else{
             DB::table('promotions')->insert([
@@ -114,7 +128,14 @@ class shopController extends Controller
             'issueBy' => $_GET['issueBy'],
             'expired' => $_GET['bday'],
             'value' => $_GET['value']]);
-          return 'Add Complete';
+
+            return view('createpromotionStatus')
+            ->with('title', "Create Promotion Complete")
+            ->with('promotionName', $_GET['promotionName'])
+            ->with('description', $_GET['description'])
+            ->with('issueBy', $_GET['issueBy'])
+            ->with('expired', $_GET['bday'])
+            ->with('value', $_GET['value']);
           }
         }
 
@@ -124,13 +145,14 @@ class shopController extends Controller
         //return $_POST['username'];
 
         if (Auth::guest()) {
-          return 'pls login';
+          return redirect("/login");
         }
         else {
           $id = Auth::id();
           $type = DB::table('users')->where('id', $id)->value('type');
           if($type == 1){
-            return "You don't have permission!";
+            return view('permissionErrorStatus')
+            ->with('title', "You don't have permission!");
           }
           else{
             $chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -141,7 +163,9 @@ class shopController extends Controller
             DB::table('redeemcode')->insert([
             'redeemcode' => $promocode,
             'value' => $_GET['amoutOfRedeemValue']]);
-            return $promocode;
+            return view('generateRedeemCodeStatus')
+            ->with('redeemCode', $promocode)
+            ->with('codeValue', $_GET['amoutOfRedeemValue']);
           }
         }
 
