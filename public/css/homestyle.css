@@ -327,3 +327,8 @@ body{
 	box-shadow:none;
 	background:#cb386f;
 }
+
+body.modal-open .modal.in {
+  display: flex !important;
+  align-items: center;
+}

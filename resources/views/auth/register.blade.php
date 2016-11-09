@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-info">
-                <div class="panel-heading" align="center">สมัครสมาชิกแจ่มใส</div>
+                <div class="panel-heading" align="center" style="font-weight: bold;">สมัครสมาชิกแจ่มใส</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
