@@ -44,31 +44,33 @@
 	</div>
 	<a href="#"><i class="fa fa-star"></i>&nbsp;&nbsp;แต้มแจ่มใสของคุณ <span class="pull-right alert-numb">{{ Auth::user()->score }}</span></a>
 	<div class="sub-nav">
-		<a href="#">Inbox <span class="pull-right alert-numb">11</span></a>
-		<a href="#">Important <span class="pull-right alert-numb">10</span></a>
-		<a href="#">Sent</a>
-		<a href="#">Draft</a>
-		<a href="#">Trash</a>
-		<a href="#">All messages</a>
+		<a href="#">แต้มแจ่มใสคืออะไร ?</a>
+		<a href="#">แต้มแจ่มใส สามารถทำอะไรได้บ้าง ?</a>
+		<a href="#">ใช้แต้มแจ่มใสได้ที่ไหน ?</a>
+		<a href="#">จะได้รับแต้มแจ่มใสจากไหนบ้าง ?</a>
 	</div>
-	<a href="#"><i class="fa fa-get-pocket"></i>&nbsp;&nbsp;ใส่โค้ดโปรโมชั่นที่นี่</a>
+	<a href="#"><i class="fa fa-get-pocket"></i>&nbsp;&nbsp;ใส่โค้ดรับแต้มแจ่มใส</a>
 	<div class="sub-nav">
-		<div class="html chat">
-			<div class="user user-khadkamhn clearfix">
-				<span class="text-msg pull-right">I'm so unhappy :(</span>
-			</div>
-			<div class="user user-khadkamhn clearfix">
-				<span class="text-msg pull-right">I have no invitation in dribbble yet. why?</span>
-			</div>
-			<div class="user user-dribble clearfix">
-				<span class="photo pull-left" data-username="dribbble"><i class="fa fa-dribbble"></i></span>
-				<span class="text-msg">Don't worry dude!</span>
-			</div>
-			<div class="user user-dribble clearfix">
-				<span class="photo pull-left" data-username="dribbble"><i class="fa fa-dribbble"></i></span>
-				<span class="text-msg">Some awesome people may find you and invite you soon.... :)</span>
-			</div>
-		</div>
+		<form action='userRedeem' method='get'>
+		  <br><p>&nbsp;นำโค้ดที่ได้รับจากร้านค้ามากรอกที่นี่ เพื่อรับแต้มแจ่มใส</p>
+		  <label>
+		    <p align="center">&nbsp;Jamsai Redeem Code :
+		    <input name='redeemCode' type='text'>
+		  </label>
+
+		  <input type='submit'></p>
+		</form>
+	</div>
+	<a href="#"><i class="fa fa-exchange"></i>&nbsp;&nbsp;ใช้แต้มแลกรางวัล</a>
+	<div class="sub-nav">
+		<form action='userExchageReward' method='get'>
+		  <br><p>&nbsp;กรอก Promotion ID ที่คุณต้องการแลกของรางวัล</p>
+		  <label>
+		    <p align="center">&nbsp;Promotion ID :
+		    <input name='promotionID' type='text'>
+		  </label>
+		  <input type='submit'></p>
+		</form>
 	</div>
 	<a href="#"><i class="fa fa-gear"></i>&nbsp;&nbsp;แก้ไขข้อมูลส่วนตัว</a>
 	<div class="sub-nav">
