@@ -38,6 +38,12 @@
     {!! Form::text('issueBy', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
+    {!! Form::label('expired', 'Start date:', ['class' => 'col-md-4 control-label']) !!}
+      <div class="col-md-6">
+       {!! Form::input('bday', 'bday', date('Y-m-d'), ['class' => 'form-control']) !!}
+      </div>
+</div>
+<div class="form-group">
     {!!Form::submit('Click Me!');!!}
 </div>
 {!! Form::close() !!}

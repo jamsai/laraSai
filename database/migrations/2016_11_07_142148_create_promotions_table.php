@@ -13,7 +13,7 @@ class CreatePromotionsTable extends Migration
     public function up()
     {
         Schema::create('promotions', function (Blueprint $table) {
-          $table->increments('promotionID')->unique();
+          $table->increments('id')->unique();
           $table->string('promotionName');
 		  $table->longText('description');
           $table->string('issueBy');

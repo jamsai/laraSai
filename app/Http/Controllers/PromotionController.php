@@ -55,11 +55,11 @@ class PromotionController extends Controller
   public function show($id)
   {
     // get the nerd
-      $promoion = Promotion::find($id);
-      return $promotion->promotionID;
+      $promotion = Promotion::find($id);
+
       // show the view and pass the nerd to it
-      // return View('promotions.show')
-      //     ->with('promotion', $promotion);
+      return View('promotions.show')
+          ->with('promotion', $promotion);
   }
 
   /**
