@@ -13,7 +13,7 @@ class userController extends Controller
 {
     public function userRedeem(){{
       if (Auth::guest()) {
-        return 'pls login';
+        return redirect("/login");
       }
       else{
         $id = Auth::id();
@@ -26,7 +26,7 @@ class userController extends Controller
                 ->where('id', $id)
                 ->update(['score' => $result]);
           DB::table('redeemcode')->where('redeemcode',$_GET['redeemCode'])->delete();
-          return "redeem sucessful";
+          return redirect("/home");
 
         }
         else{
@@ -36,7 +36,7 @@ class userController extends Controller
     }}
     public function userExchageReward(){{
       if (Auth::guest()) {
-        return 'pls login';
+        return redirect("/login");
       }
       else{
         $id = Auth::id();
