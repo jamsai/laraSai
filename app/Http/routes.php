@@ -86,6 +86,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::auth();
 
+Route::resource('promotions', 'PromotionController');
+
 // Route::get('addpoint/{id}/{point}',
 // 'PointController@add')
 // ->where(['id'=>'[0-9]+', 'point'=>'[0-9]+']);
