@@ -141,6 +141,40 @@ class shopController extends Controller
 
     }
   }
+  public function editPromotion(){{
+        //return $_POST['username'];
+
+        if (Auth::guest()) {
+          return redirect("/login");
+        }
+        else {
+          $id = Auth::id();
+          $type = DB::table('users')->where('id', $id)->value('type');
+          if($type == 1){
+            return view('permissionErrorStatus')
+            ->with('title', "You don't have permission!");
+          }
+          else{
+            DB::table('promotions')->insert([
+            'promotionName' => $_GET['id'],
+            'promotionName' => $_GET['promotionName'],
+            'description' => $_GET['description'],
+            'issueBy' => $_GET['issueBy'],
+            'expired' => $_GET['bday'],
+            'value' => $_GET['value']]);
+
+            return view('createpromotionStatus')
+            ->with('title', "Create Promotion Complete")
+            ->with('promotionName', $_GET['promotionName'])
+            ->with('description', $_GET['description'])
+            ->with('issueBy', $_GET['issueBy'])
+            ->with('expired', $_GET['bday'])
+            ->with('value', $_GET['value']);
+          }
+        }
+
+    }
+  }
   public function generateRedeemCode(){{
         //return $_POST['username'];
 

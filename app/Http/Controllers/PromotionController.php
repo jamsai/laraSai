@@ -70,7 +70,11 @@ class PromotionController extends Controller
    */
   public function edit($id)
   {
-      //
+      $promotion = Promotion::find($id);
+
+      // show the edit form and pass the nerd
+      return View('promotions.edit')
+          ->with('promotion', $promotion);
   }
 
   /**
