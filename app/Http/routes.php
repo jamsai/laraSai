@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('index');
@@ -29,6 +30,17 @@ Route::get('/shopcontrol', function () {
 
 Route::get('/userprofile', function () {
     return view('userprofile');
+});
+
+Route::get('/redirectAfterLogin', function () {
+    $id = Auth::id();
+    $type = DB::table('users')->where('id', $id)->value('type');
+    if($type == 1){
+      return redirect("/");
+    }
+    else{
+      return redirect("/shopcontrol");
+    }
 });
 
 Route::get('submitpromotion', 'ShopController@createPromotion');
