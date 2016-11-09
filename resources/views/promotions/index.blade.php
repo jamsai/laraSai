@@ -43,7 +43,7 @@
             <td>{{ $value->promotionName }}</td>
             <!-- <td>{{ $value->description }}</td> -->
             <!-- <td>{{ $value->issueBy }}</td> -->
-            <td>{{ $value->Value }}</td>
+            <td>{{ $value->value }}</td>
             <td>{{ $value->expired }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
