@@ -33,7 +33,7 @@ class PromotionController extends Controller
    */
   public function create()
   {
-      //
+      return View('promotions.create');
   }
 
   /**
@@ -54,7 +54,12 @@ class PromotionController extends Controller
    */
   public function show($id)
   {
-      //
+    // get the nerd
+      $promoion = Promotion::find($id);
+      return $promotion->promotionID;
+      // show the view and pass the nerd to it
+      // return View('promotions.show')
+      //     ->with('promotion', $promotion);
   }
 
   /**
