@@ -21,11 +21,12 @@
 <h1>Edit {{ $promotion->promotionName }}</h1>
 
 <!-- if there are creation errors, they will show here -->
-
-{!! Form::open(['action' => 'ShopController@editPromotion', 'method' => 'get'])!!}
-<div class="form-group">
+{!!Form::model($promotion, array('route' => array('promotion.update', $promotion->id)))!!}
+<!-- {{ Form::model($nerd, array('route' => array('nerds.update', $nerd->id), 'method' => 'PUT')) }} -->
+<!-- {!! Form::open(['action' => 'ShopController@editPromotion', 'method' => 'get'])!!} -->
+<!-- <div class="form-group">
     {!! Form::label('PromotionID', 'PromotionID:') !!}
-    {!! Form::text('id',$promotion->id , ['class' => 'form-control']) !!}
+    {!! Form::text('promotionID',null , ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('PromotionName', 'PromotionName:') !!}
@@ -51,7 +52,7 @@
 </div>
 <div class="form-group">
     {!!Form::submit('Click Me!');!!}
-</div>
+</div> -->
 {!! Form::close() !!}
 
 </div>

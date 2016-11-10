@@ -85,7 +85,32 @@ class PromotionController extends Controller
    */
   public function update($id)
   {
+    // validate
+      // read more on validation at http://laravel.com/docs/validation
+      // $rules = array(
+      //     'promotionName'       => 'required',
+      //     'value'      => 'required|numeric'
+      // );
+      // $validator = Validator(input::all(), $rules);
       //
+      // // process the login
+      // if ($validator->fails()) {
+      //     return Redirect('promotions/' . $id . '/edit')
+      //         ->withErrors($validator);
+      // } else {
+          // store
+          $promotion = Promotion::find($id);
+          $promotion->promotionName       = input::get('promotionName');
+          $promotion->value      = input::get('value');
+          $promotion->description      = input::get('description');
+          $promotion->expired = input::get('bday');
+          $promotion->issueBy = input::get('issueBy');
+          $promotion->save();
+
+          // redirect
+          session()->flash('message', 'Successfully updated promotion!');
+          return Redirect('promotions');
+      // }
   }
 
   /**
@@ -96,6 +121,36 @@ class PromotionController extends Controller
    */
   public function destroy($id)
   {
-      //
+    // delete
+      $promotion = Promotion::find($id);
+      $promotion->delete();
+
+      // redirect
+      session()->flash('message', 'Successfully deleted the promotion!');
+      return Redirect('promotions');
+  }
+  public function getReward($id)
+    {
+      // delete
+        $promotion = Promotion::find($id);
+        //return var_dump($promotion);
+        $id = Auth::id();
+        $type = DB::table('users')->where('id', $id)->value('type');
+        $name = DB::table('users')->where('id', $id)->value('name');
+        $score = DB::table('users')->where('id', $id)->value('score');
+
+          if($score>=$promotion->value){
+              $score_left = $score-$promotion->value;
+              DB::table('users')
+                    ->where('id', $id)
+                    ->update(['score' => $score_left]);
+                    session()->flash('message', 'You got the reward');
+          }
+          else{
+            session()->flash('message', 'Not enough point');
+          }
+        // redirect
+        return Redirect('promotions');
+
   }
 }

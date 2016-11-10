@@ -20,6 +20,8 @@
 </nav>
 
 <h1>All the Promotions</h1>
+{{ Auth::user()->name }}
+{{ Auth::user()->type }}
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
@@ -50,13 +52,26 @@
             <td>
 
                 <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
+                @if (Auth::user()->type==2)<!-- shop keeper -->
+                  {{ Form::open(array('url' => 'promotions/' . $value->id, 'class' => 'pull-right')) }}
+                     {{ Form::hidden('_method', 'DELETE') }}
+                     {{ Form::submit('Delete this promotion', array('class' => 'btn btn-warning')) }}
+                 {{ Form::close() }}
+               @endif
+
                 <!-- we will add this later since its a little more complicated than the other two buttons -->
 
                 <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
                 <a class="btn btn-small btn-success" href="{{ URL::to('promotions/' . $value->id) }}">Show this Promotion</a>
 
                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                <a class="btn btn-small btn-info" href="{{ URL::to('promotions/' . $value->id . '/edit') }}">Edit this Promotion</a>
+                @if (Auth::user()->type==2)<!-- shop keeper -->
+                  <a class="btn btn-small btn-info" href="{{ URL::to('promotions/' . $value->id . '/edit') }}">Edit this Promotion</a>
+                @endif
+                @if (Auth::user()->type==1)<!-- customer -->
+                  <a class="btn btn-small btn-info" href="{{ URL::to('getreward/' . $value->id) }}">Get Reward</a>
+                @endif
+
 
             </td>
         </tr>
