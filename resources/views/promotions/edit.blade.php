@@ -17,43 +17,25 @@
         <li><a href="{{ URL::to('promotions/create') }}">Create a Promotion</a>
     </ul>
 </nav>
+{{ Form::model($promotion, array('route' => array('promotions.update', $promotion->id), 'method' => 'PUT')) }}
 
-<h1>Edit {{ $promotion->promotionName }}</h1>
+    <div class="form-group">
+        {{ Form::label('promotionName', 'promotionName') }}
+        {{ Form::text('promotionName', null, array('class' => 'form-control')) }}
+    </div>
 
-<!-- if there are creation errors, they will show here -->
-{!!Form::model($promotion, array('route' => array('promotion.update', $promotion->id)))!!}
-<!-- {{ Form::model($nerd, array('route' => array('nerds.update', $nerd->id), 'method' => 'PUT')) }} -->
-<!-- {!! Form::open(['action' => 'ShopController@editPromotion', 'method' => 'get'])!!} -->
-<!-- <div class="form-group">
-    {!! Form::label('PromotionID', 'PromotionID:') !!}
-    {!! Form::text('promotionID',null , ['class' => 'form-control']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('PromotionName', 'PromotionName:') !!}
-    {!! Form::text('promotionName', null, ['class' => 'form-control']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('Description', 'Description:') !!}
-    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('Value', 'Value:') !!}
-    {!! Form::text('value', null, ['class' => 'form-control']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('issueBy', 'issueBy:') !!}
-    {!! Form::text('issueBy', null, ['class' => 'form-control']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('expired', 'Start date:', ['class' => 'col-md-4 control-label']) !!}
-      <div class="col-md-6">
-       {!! Form::input('bday', 'bday', date('Y-m-d'), ['class' => 'form-control']) !!}
-      </div>
-</div>
-<div class="form-group">
-    {!!Form::submit('Click Me!');!!}
-</div> -->
-{!! Form::close() !!}
+    <div class="form-group">
+        {{ Form::label('value', 'value') }}
+        {{ Form::email('value', null, array('class' => 'form-control')) }}
+    </div>
+
+
+
+    {{ Form::submit('Edit the Nerd!', array('class' => 'btn btn-primary')) }}
+
+{{ Form::close() }}
+
+
 
 </div>
 </body>

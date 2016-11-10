@@ -197,9 +197,11 @@ class shopController extends Controller
             DB::table('redeemcodes')->insert([
             'redeemcode' => $promocode,
             'value' => $_GET['amoutOfRedeemValue']]);
-            return view('generateRedeemCodeStatus')
-            ->with('redeemCode', $promocode)
-            ->with('codeValue', $_GET['amoutOfRedeemValue']);
+            session()->flash('message', 'New Code is '.$promocode.' ');
+            // return view('generateRedeemCodeStatus')
+            return Redirect('redeemcodes');
+            // ->with('redeemCode', $promocode)
+            // ->with('codeValue', $_GET['amoutOfRedeemValue']);
           }
         }
 

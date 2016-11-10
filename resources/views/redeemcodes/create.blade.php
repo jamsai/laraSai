@@ -1,4 +1,5 @@
 <!-- app/views/nerds/index.blade.php -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,41 +11,28 @@
 
 <nav class="navbar navbar-inverse">
     <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('promotions') }}">Promotion</a>
+        <a class="navbar-brand" href="{{ URL::to('redeemcodes') }}">RedeemCode</a>
     </div>
     <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('promotions') }}">View All Promotions</a></li>
-        <li><a href="{{ URL::to('promotions/create') }}">Create a Promotion</a>
+        <li><a href="{{ URL::to('redeemcodes') }}">View All RedeemCode</a></li>
+
+        <li><a href="{{ URL::to('redeemcodes/create') }}">Create a RedeemCode</a>
+
     </ul>
 </nav>
 
-<h1>Create a Promotion</h1>
+<h1>All the Redeemcodes</h1>
 
-{!! Form::open(['action' => 'ShopController@createPromotion', 'method' => 'get'])!!}
+<h1>Generate RedeemCode</h1>
+
+
+{!! Form::open(['action' => 'ShopController@generateRedeemCode', 'method' => 'get'])!!}
 <div class="form-group">
-    {!! Form::label('PromotionName', 'PromotionName:') !!}
-    {!! Form::text('promotionName', null, ['class' => 'form-control']) !!}
+    {!! Form::label('amoutOfRedeemValue', 'amoutOfRedeemValue') !!}
+    {!! Form::text('amoutOfRedeemValue', null, ['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
-    {!! Form::label('Description', 'Description:') !!}
-    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('Value', 'Value:') !!}
-    {!! Form::text('value', null, ['class' => 'form-control']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('issueBy', 'issueBy:') !!}
-    {!! Form::text('issueBy', null, ['class' => 'form-control']) !!}
-</div>
-<div class="form-group">
-    {!! Form::label('expired', 'Start date:', ['class' => 'col-md-4 control-label']) !!}
-      <div class="col-md-6">
-       {!! Form::input('bday', 'bday', date('Y-m-d'), ['class' => 'form-control']) !!}
-      </div>
-</div>
-<div class="form-group">
-    {!!Form::submit('Click Me!');!!}
+    {!!Form::submit('Generate!');!!}
 </div>
 {!! Form::close() !!}
 

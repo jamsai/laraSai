@@ -11,12 +11,12 @@
 
 <nav class="navbar navbar-inverse">
     <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('redeemcodes') }}">Promotion</a>
+        <a class="navbar-brand" href="{{ URL::to('redeemcodes') }}">RedeemCode</a>
     </div>
     <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('redeemcodes') }}">View All Promotions</a></li>
+        <li><a href="{{ URL::to('redeemcodes') }}">View All RedeemCode</a></li>
 
-        <li><a href="{{ URL::to('redeemcodes/create') }}">Create a Promotion</a>
+        <li><a href="{{ URL::to('redeemcodes/create') }}">Create a RedeemCode</a>
 
     </ul>
 </nav>

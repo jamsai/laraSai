@@ -29,4 +29,8 @@ class redeemCodeController extends Controller
       session()->flash('message', 'Successfully deleted the Redeemcode!');
       return Redirect('redeemcodes');
   }
+  public function create()
+  {
+      return View('redeemcodes.create');
+  }
 }
