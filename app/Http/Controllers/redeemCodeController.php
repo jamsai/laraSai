@@ -26,7 +26,7 @@ class redeemCodeController extends Controller
       $redeemCodes->delete();
 
       // redirect
-      session()->flash('message', 'Successfully deleted the Redeemcode!');
+      session()->flash('message', 'Successfully deleted the Redeem Code!');
       return Redirect('redeemcodes');
   }
   public function create()

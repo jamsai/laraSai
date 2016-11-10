@@ -40,14 +40,14 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="assets/images/banner.png" height="20" width="100">
+                    <img src="assets/images/banner.png" height="22" width="100">
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">My Profile</a></li>
+                    <li><a href="{{ url('/home') }}"><i class="fa fa-user"></i> My Profile</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
