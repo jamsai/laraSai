@@ -101,6 +101,9 @@ class PromotionController extends Controller
             $promotion = Promotion::find($id);
             $promotion->PromotionName   = Input::get('promotionName');
             $promotion->value      = Input::get('value');
+            $promotion->description      = Input::get('description');
+            $promotion->issueBy      = Input::get('issueBy');
+            // $promotion->bday      = Input::get('bday');
             $promotion->save();
             return redirect('promotions');
     // DB::table('promotions')
