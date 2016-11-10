@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Support\Facades\Input;
 
 class userController extends Controller
 {
@@ -118,5 +119,32 @@ class userController extends Controller
         return View('users.show')
             ->with('user', $user);
     }
+    public function edit($id)
+    {
+        $user = User::find($id);
+
+        // show the edit form and pass the nerd
+        //return var_dump($promotion);
+        return View('users.edit')
+            ->with('user', $user);
+    }
+    public function update($id)
+    {
+
+              $user = User::find($id);
+              $user->name   = Input::get('name');
+              $user->username      = Input::get('username');
+              $user->email      = Input::get('email');
+              $user->phonenumber      = Input::get('phonenumber');
+              $user->save();
+              return redirect('users');
+      // DB::table('promotions')
+      //         ->where('id', $_GET['promotionID'])
+      //         ->update(['promotionName' => $_GET['promotionName']])
+      //         ->update(['description' => $_GET['description']])
+      //         ->update(['value' => $_GET['value']])
+      //         ->update(['bday' => $_GET['bday']]);
+    }
+
 
 }

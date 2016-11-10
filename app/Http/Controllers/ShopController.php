@@ -129,22 +129,19 @@ class shopController extends Controller
             'expired' => $_GET['bday'],
             'value' => $_GET['value']]);
 
-            return view('createpromotionStatus')
-            ->with('title', "Create Promotion Complete")
-            ->with('promotionName', $_GET['promotionName'])
-            ->with('description', $_GET['description'])
-            ->with('issueBy', $_GET['issueBy'])
-            ->with('expired', $_GET['bday'])
-            ->with('value', $_GET['value']);
+            return redirect('promotions');
+            // return view('createpromotionStatus')
+            // ->with('title', "Create Promotion Complete")
+            // ->with('promotionName', $_GET['promotionName'])
+            // ->with('description', $_GET['description'])
+            // ->with('issueBy', $_GET['issueBy'])
+            // ->with('expired', $_GET['bday'])
+            // ->with('value', $_GET['value']);
           }
         }
 
     }
   }
-  public function editPromotion()
-  {{
-    return 'asdfasdd';
-  }}
   public function generateRedeemCode(){{
         //return $_POST['username'];
 

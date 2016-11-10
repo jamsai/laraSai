@@ -10,11 +10,10 @@
 
 <nav class="navbar navbar-inverse">
     <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('promotions') }}">Promotion</a>
+        <a class="navbar-brand" href="{{ URL::to('customers') }}">Customer</a>
     </div>
     <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('promotions') }}">View All Promotions</a></li>
-        <li><a href="{{ URL::to('promotions/create') }}">Create a Promotion</a>
+        <li><a href="{{ URL::to('users') }}">View All Customers</a></li>
     </ul>
 </nav>
 

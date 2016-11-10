@@ -53,6 +53,9 @@
 
               <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/remove/1') }}">Remove 1 point</a>
               <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/remove/5') }}">Remove 5 point</a>
+              @if (Auth::user()->type==2)<!-- shop keeper -->
+                <a class="btn btn-small btn-success" href="{{ URL::to('users/' . $value->id . '/edit') }}">Edit this Customer</a>
+              @endif
 
                 <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
                 @if (Auth::user()->type==2)<!-- shop keeper -->
