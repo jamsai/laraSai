@@ -54,6 +54,17 @@ Route::get('/redirectAfterLogin', function () {
     }
 });
 
+Route::get('/home', function () {
+    $id = Auth::id();
+    $type = DB::table('users')->where('id', $id)->value('type');
+    if($type == 1){
+      return redirect("/userprofile");
+    }
+    else{
+      return redirect("/shopcontrol");
+    }
+});
+
 Route::get('submitpromotion', 'ShopController@createPromotion');
 
 Route::auth();
@@ -78,11 +89,11 @@ Route::get('userExchageReward', 'userController@userExchageReward');
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');
 
 Route::auth();
 
