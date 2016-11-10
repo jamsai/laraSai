@@ -26,39 +26,39 @@ class shopController extends Controller
   //
   //   }
   // }
-  public function addPointGET(){{
-       //var_dump($_GET);
-       //return ''.$_GET['customerID'];
-       if (Auth::guest()) {
-         return redirect("/login");
-       }
-       else{
-         $id = Auth::id();
-         $type = DB::table('users')->where('id', $id)->value('type');
-         if($type == 1){
-           return view('permissionErrorStatus')
-           ->with('title', "You don't have permission!");
-         }
-         else{
-           $score = DB::table('users')->where('id', $_GET['customerID'])->value('score');
-           $name = DB::table('users')->where('id', $_GET['customerID'])->value('name');
-           $result = $score+$_GET['point'];
-
-           DB::table('users')
-                 ->where('id', $_GET['customerID'])
-                 ->update(['score' => $result]);
-
-          return view('shopProcessAddorRemovePointStatus')
-          ->with('title', "Point is added!")
-          ->with('name', $name)
-          ->with('value', $_GET['point'])
-          ->with('totalPoint', $result)
-          ->with('customerID', $_GET['customerID'])
-          ->with('action', "added");
-         }
-       }
-    }
-  }
+  // public function addPointGET(){{
+  //      //var_dump($_GET);
+  //      //return ''.$_GET['customerID'];
+  //      if (Auth::guest()) {
+  //        return redirect("/login");
+  //      }
+  //      else{
+  //        $id = Auth::id();
+  //        $type = DB::table('users')->where('id', $id)->value('type');
+  //        if($type == 1){
+  //          return view('permissionErrorStatus')
+  //          ->with('title', "You don't have permission!");
+  //        }
+  //        else{
+  //          $score = DB::table('users')->where('id', $_GET['customerID'])->value('score');
+  //          $name = DB::table('users')->where('id', $_GET['customerID'])->value('name');
+  //          $result = $score+$_GET['point'];
+  //
+  //          DB::table('users')
+  //                ->where('id', $_GET['customerID'])
+  //                ->update(['score' => $result]);
+  //
+  //         return view('shopProcessAddorRemovePointStatus')
+  //         ->with('title', "Point is added!")
+  //         ->with('name', $name)
+  //         ->with('value', $_GET['point'])
+  //         ->with('totalPoint', $result)
+  //         ->with('customerID', $_GET['customerID'])
+  //         ->with('action', "added");
+  //        }
+  //      }
+  //   }
+  // }
     // public function remove($id, $point){{
     //
     //   $score = DB::table('users')->where('id', $id)->value('score');
@@ -74,40 +74,40 @@ class shopController extends Controller
     //
     //   }
     // }
-    public function removePointGET(){{
-       //var_dump($_GET);
-       //return ''.$_GET['customerID'];
-       if (Auth::guest()) {
-         return redirect("/login");
-       }
-       else{
-         $id = Auth::id();
-         $type = DB::table('users')->where('id', $id)->value('type');
-         if($type == 1){
-           return view('permissionErrorStatus')
-           ->with('title', "You don't have permission!");
-         }
-         else{
-           $score = DB::table('users')->where('id', $_GET['customerID'])->value('score');
-           $name = DB::table('users')->where('id', $_GET['customerID'])->value('name');
-           $result = $score-$_GET['point'];
-
-           DB::table('users')
-                 ->where('id', $_GET['customerID'])
-                 ->update(['score' => $result]);
-
-
-          return view('shopProcessAddorRemovePointStatus')
-          ->with('title', "Point is removed!")
-          ->with('name', $name)
-          ->with('value', $_GET['point'])
-          ->with('totalPoint', $result)
-          ->with('customerID', $_GET['customerID'])
-          ->with('action', "removed");
-         }
-       }
-    }
-  }
+  //   public function removePointGET(){{
+  //      //var_dump($_GET);
+  //      //return ''.$_GET['customerID'];
+  //      if (Auth::guest()) {
+  //        return redirect("/login");
+  //      }
+  //      else{
+  //        $id = Auth::id();
+  //        $type = DB::table('users')->where('id', $id)->value('type');
+  //        if($type == 1){
+  //          return view('permissionErrorStatus')
+  //          ->with('title', "You don't have permission!");
+  //        }
+  //        else{
+  //          $score = DB::table('users')->where('id', $_GET['customerID'])->value('score');
+  //          $name = DB::table('users')->where('id', $_GET['customerID'])->value('name');
+  //          $result = $score-$_GET['point'];
+  //
+  //          DB::table('users')
+  //                ->where('id', $_GET['customerID'])
+  //                ->update(['score' => $result]);
+  //
+  //
+  //         return view('shopProcessAddorRemovePointStatus')
+  //         ->with('title', "Point is removed!")
+  //         ->with('name', $name)
+  //         ->with('value', $_GET['point'])
+  //         ->with('totalPoint', $result)
+  //         ->with('customerID', $_GET['customerID'])
+  //         ->with('action', "removed");
+  //        }
+  //      }
+  //   }
+  // }
   public function createPromotion(){{
         //return $_POST['username'];
 

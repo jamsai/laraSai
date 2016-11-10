@@ -10,19 +10,19 @@ use Illuminate\Support\Facades\DB;
 
 class AddPointController extends Controller
 {
-		public function index(){
-
-		return 'Point Add';
-
-	}
-			public function add($id, $point){{
-			
-			DB::table('users')
-            ->where('id', $id)
-            ->update(['score' => $point]);
-
-			return 'Point add to' . $id . ' ' . $point;
-
-		}
-	}
+	// 	public function index(){
+  //
+	// 	return 'Point Add';
+  //
+	// }
+	// 		public function add($id, $point){{
+	//
+	// 		DB::table('users')
+  //           ->where('id', $id)
+  //           ->update(['score' => $point]);
+  //
+	// 		return 'Point add to' . $id . ' ' . $point;
+  //
+	// 	}
+	// }
 }

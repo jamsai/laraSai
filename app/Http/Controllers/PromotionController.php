@@ -37,15 +37,7 @@ class PromotionController extends Controller
       return View('promotions.create');
   }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @return Response
-   */
-  public function store()
-  {
-      //
-  }
+
 
   /**
    * Display the specified resource.

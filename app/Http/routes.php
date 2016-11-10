@@ -19,9 +19,9 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/createpromotion', function () {
-    return view('createpromotion');
-});
+// Route::get('/createpromotion', function () {
+//     return view('createpromotion');
+// });
 
 // Route::auth();
 
@@ -70,13 +70,13 @@ Route::get('/home', function () {
 
 Route::get('submitpromotion', 'ShopController@createPromotion');
 
-Route::auth();
+// Route::auth();
 
-Route::get('addPointGET', 'ShopController@addPointGET');
-
-Route::auth();
-
-Route::get('removePointGET', 'ShopController@removePointGET');
+// Route::get('addPointGET', 'ShopController@addPointGET');
+//
+// Route::auth();
+//
+// Route::get('removePointGET', 'ShopController@removePointGET');
 
 Route::auth();
 
@@ -88,17 +88,17 @@ Route::get('userRedeem', 'userController@userRedeem');
 
 Route::auth();
 
-Route::get('userExchageReward', 'userController@userExchageReward');
-
-Route::auth();
-
-// Route::get('/home', 'HomeController@index');
-
-Route::auth();
+// Route::get('userExchageReward', 'userController@userExchageReward');
+//
+// Route::auth();
 
 // Route::get('/home', 'HomeController@index');
 
-Route::auth();
+// Route::auth();
+
+// Route::get('/home', 'HomeController@index');
+
+// Route::auth();
 
 // Route::get('promotions/{id}/edit', function()
 // {
