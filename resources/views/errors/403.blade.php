@@ -33,11 +33,11 @@
 <div class="content">
   <canvas id="snow" class="snow"></canvas>
   <div class="main-text">
-    <h1 style="font-family: thai_sans_literegular;">ขออภัยค่ะ หน้านี้ยังไม่พร้อมใช้งาน > <"</h1><a href="/" style="font-family: thai_sans_literegular;   font-size: 1.2rem">กลับหน้าแรกของแจ่มใส</a>
+    <h1 style="font-family: thai_sans_literegular;">ขออภัยค่ะ แจ่มใสไม่พบหน้าที่คุณต้องการ > <"</h1><a href="/" style="font-family: thai_sans_literegular; font-size: 1.2rem">กลับหน้าแรกของแจ่มใส</a>
   </div>
   <div class="ground">
     <div class="mound">
-      <div class="mound_text">503</div>
+      <div class="mound_text">404</div>
       <div class="mound_spade"></div>
     </div>
   </div>
