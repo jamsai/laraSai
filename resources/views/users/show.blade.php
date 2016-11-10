@@ -18,13 +18,17 @@
     </ul>
 </nav>
 
-<h1>Showing {{ $promotion->promotionName }}</h1>
+<h1>Showing {{ $user->name }}</h1>
 
     <div class="jumbotron text-center">
-        <h2>{{ $promotion->promotionID }}</h2>
+
         <p>
-            <strong>Description:</strong> {{ $promotion->description }}<br>
-            <strong>IssueBy:</strong> {{ $promotion->issueBy }}
+            <strong>ID:</strong> {{ $user->id }}<br>
+            <strong>Name:</strong> {{ $user->name }}<br>
+            <strong>UserName:</strong> {{ $user->username }}<br>
+            <strong>E-mail:</strong> {{ $user->email }}<br>
+            <strong>PhoneNumber:</strong> {{ $user->phonenumber }}<br>
+            <strong>Point:</strong> {{ $user->score }}<br>
         </p>
     </div>
 

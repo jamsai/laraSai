@@ -21,10 +21,13 @@
 <h1>Showing {{ $promotion->promotionName }}</h1>
 
     <div class="jumbotron text-center">
-        <h2>{{ $promotion->promotionID }}</h2>
         <p>
+            <strong>ID:</strong> {{ $promotion->id }}<br>
+            <strong>Promotion Name:</strong> {{ $promotion->name }}<br>
             <strong>Description:</strong> {{ $promotion->description }}<br>
-            <strong>IssueBy:</strong> {{ $promotion->issueBy }}
+            <strong>IssueBy:</strong> {{ $promotion->issueBy }}<br>
+            <strong>Value:</strong> {{ $promotion->value }}<br>
+            <strong>Expired Date:</strong> {{ $promotion->expired }}<br>
         </p>
     </div>
 

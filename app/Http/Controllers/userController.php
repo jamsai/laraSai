@@ -93,5 +93,30 @@ class userController extends Controller
         session()->flash('message', 'Successfully Add Points!');
         return Redirect('users');
     }
+    public function remove($id,$points)
+    {
+      // delete
+        $user = User::find($id);
+        if($user->score >= $points){
+          $user->score = $user->score-$points;
+          $user->save();
+          session()->flash('message', 'Successfully Remove Points!');
+        }
+        else{
+          session()->flash('message', 'Not enough Points!');
+        }
+
+        // redirect
+        return Redirect('users');
+    }
+    public function show($id)
+    {
+      // get the nerd
+        $user = User::find($id);
+
+        // show the view and pass the nerd to it
+        return View('users.show')
+            ->with('user', $user);
+    }
 
 }

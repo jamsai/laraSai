@@ -46,10 +46,13 @@
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>
-              <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/add/10') }}">Add 10 point</a>
-              <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/add/50') }}">Add 50 point</a>
-              <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/add/100') }}">Add 100 point</a>
-              <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/add/500') }}">Add 500 point</a>
+              <a class="btn btn-small btn-success" href="{{ URL::to('users/' . $value->id) }}">Show this Customer</a>
+
+              <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/add/1') }}">Add 1 point</a>
+              <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/add/5') }}">Add 5 point</a>
+
+              <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/remove/1') }}">Remove 1 point</a>
+              <a class="btn btn-small btn-info" href="{{ URL::to('users/' . $value->id . '/remove/5') }}">Remove 5 point</a>
 
                 <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
                 @if (Auth::user()->type==2)<!-- shop keeper -->

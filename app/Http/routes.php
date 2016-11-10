@@ -104,6 +104,8 @@ Route::get('promotions/{id}/edit', function()
 
 Route::get('users/{id}/add/{points}', 'userController@add');
 
+Route::get('users/{id}/remove/{points}', 'userController@remove');
+
 Route::resource('promotions', 'PromotionController');
 
 Route::resource('redeemcodes', 'redeemCodeController');
