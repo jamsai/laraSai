@@ -19,13 +19,13 @@ class userController extends Controller
         $id = Auth::id();
         $type = DB::table('users')->where('id', $id)->value('type');
         if($type==1){
-          $redeemvalue = DB::table('redeemcode')->where('redeemcode', $_GET['redeemCode'])->value('value');
+          $redeemvalue = DB::table('redeemcodes')->where('redeemcode', $_GET['redeemCode'])->value('value');
           $score = DB::table('users')->where('id', $id)->value('score');
           $result = $score+$redeemvalue;
           DB::table('users')
                 ->where('id', $id)
                 ->update(['score' => $result]);
-          DB::table('redeemcode')->where('redeemcode',$_GET['redeemCode'])->delete();
+          DB::table('redeemcodes')->where('redeemcode',$_GET['redeemCode'])->delete();
           return redirect("/home");
 
         }

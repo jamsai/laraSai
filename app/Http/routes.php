@@ -88,6 +88,8 @@ Route::auth();
 
 Route::resource('promotions', 'PromotionController');
 
+Route::resource('redeemcodes', 'redeemCodeController');
+
 Route::get('getreward/{id}', 'PromotionController@getReward');
 
 // Route::get('addpoint/{id}/{point}',

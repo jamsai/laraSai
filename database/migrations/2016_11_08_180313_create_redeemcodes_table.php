@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRedeemcodeTable extends Migration
+class CreateRedeemcodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateRedeemcodeTable extends Migration
      */
     public function up()
     {
-        Schema::create('redeemcode', function (Blueprint $table) {
+        Schema::create('redeemcodes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('redeemcode')->unique();;
             $table->integer('value');
@@ -27,6 +27,6 @@ class CreateRedeemcodeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('redeemcode');
+        Schema::drop('redeemcodes');
     }
 }

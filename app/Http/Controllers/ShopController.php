@@ -194,7 +194,7 @@ class shopController extends Controller
             for ($i = 0; $i < 10; $i++) {
               $promocode .= $chars[mt_rand(0, strlen($chars)-1)];
             }
-            DB::table('redeemcode')->insert([
+            DB::table('redeemcodes')->insert([
             'redeemcode' => $promocode,
             'value' => $_GET['amoutOfRedeemValue']]);
             return view('generateRedeemCodeStatus')

@@ -11,19 +11,17 @@
 
 <nav class="navbar navbar-inverse">
     <div class="navbar-header">
-        <a class="navbar-brand" href="{{ URL::to('promotions') }}">Promotion</a>
+        <a class="navbar-brand" href="{{ URL::to('redeemcodes') }}">Promotion</a>
     </div>
     <ul class="nav navbar-nav">
-        <li><a href="{{ URL::to('promotions') }}">View All Promotions</a></li>
-        @if (Auth::user()->type==2)<!-- shop keeper -->
-        <li><a href="{{ URL::to('promotions/create') }}">Create a Promotion</a>
-        @endif
+        <li><a href="{{ URL::to('redeemcodes') }}">View All Promotions</a></li>
+
+        <li><a href="{{ URL::to('redeemcodes/create') }}">Create a Promotion</a>
+
     </ul>
 </nav>
 
-<h1>All the Promotions</h1>
-{{ Auth::user()->name }}
-{{ Auth::user()->type }}
+<h1>All the Redeemcodes</h1>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
@@ -33,46 +31,36 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <td>PromotionID</td>
-            <td>PromotionName</td>
+            <td>RedeemCodeID</td>
+            <td>RedeemCode</td>
             <td>Value</td>
-            <td>expired</td>
             <td>Action</td>
         </tr>
     </thead>
     <tbody>
-    @foreach($promotions as $key => $value)
+    @foreach($redeemCodes as $key => $value)
         <tr>
             <td>{{ $value->id }}</td>
-            <td>{{ $value->promotionName }}</td>
+            <td>{{ $value->redeemcode }}</td>
             <!-- <td>{{ $value->description }}</td> -->
             <!-- <td>{{ $value->issueBy }}</td> -->
             <td>{{ $value->value }}</td>
-            <td>{{ $value->expired }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>
 
                 <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
                 @if (Auth::user()->type==2)<!-- shop keeper -->
-                  {{ Form::open(array('url' => 'promotions/' . $value->id, 'class' => 'pull-right')) }}
+                  {{ Form::open(array('url' => 'redeemcodes/' . $value->id)) }}
                      {{ Form::hidden('_method', 'DELETE') }}
-                     {{ Form::submit('Delete this promotion', array('class' => 'btn btn-warning')) }}
+                     {{ Form::submit('Delete this code', array('class' => 'btn btn-warning')) }}
                  {{ Form::close() }}
                @endif
 
                 <!-- we will add this later since its a little more complicated than the other two buttons -->
 
                 <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
-                <a class="btn btn-small btn-success" href="{{ URL::to('promotions/' . $value->id) }}">Show this Promotion</a>
 
-                <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                @if (Auth::user()->type==2)<!-- shop keeper -->
-                  <a class="btn btn-small btn-info" href="{{ URL::to('promotions/' . $value->id . '/edit') }}">Edit this Promotion</a>
-                @endif
-                @if (Auth::user()->type==1)<!-- customer -->
-                  <a class="btn btn-small btn-info" href="{{ URL::to('getreward/' . $value->id) }}">Get Reward</a>
-                @endif
 
 
             </td>
