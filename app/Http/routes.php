@@ -91,10 +91,13 @@ Route::get('promotions/{id}/edit', function()
   return view('promotions/edit');
 });
 
+Route::get('users/{id}/add/{points}', 'userController@add');
+
 Route::resource('promotions', 'PromotionController');
 
-
 Route::resource('redeemcodes', 'redeemCodeController');
+
+Route::resource('users', 'userController');
 
 Route::get('getreward/{id}', 'PromotionController@getReward');
 
