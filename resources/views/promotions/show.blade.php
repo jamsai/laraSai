@@ -23,7 +23,7 @@
     <div class="jumbotron text-center">
         <p>
             <strong>ID:</strong> {{ $promotion->id }}<br>
-            <strong>Promotion Name:</strong> {{ $promotion->name }}<br>
+            <strong>Promotion Name:</strong> {{ $promotion->promotionName }}<br>
             <strong>Description:</strong> {{ $promotion->description }}<br>
             <strong>IssueBy:</strong> {{ $promotion->issueBy }}<br>
             <strong>Value:</strong> {{ $promotion->value }}<br>

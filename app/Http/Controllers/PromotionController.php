@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Promotion;
+use Illuminate\Support\Facades\Input;
 
 class PromotionController extends Controller
 {
@@ -73,6 +74,7 @@ class PromotionController extends Controller
       $promotion = Promotion::find($id);
 
       // show the edit form and pass the nerd
+      //return var_dump($promotion);
       return View('promotions.edit')
           ->with('promotion', $promotion);
   }
@@ -83,34 +85,30 @@ class PromotionController extends Controller
    * @param  int  $id
    * @return Response
    */
+  // public function editPromotion()
+  // {
+  //   DB::table('promotions')
+  //           ->where('id', $_GET['promotionID'])
+  //           ->update(['promotionName' => $_GET['promotionName']])
+  //           ->update(['description' => $_GET['description']])
+  //           ->update(['value' => $_GET['value']])
+  //           ->update(['bday' => $_GET['bday']]);
+  //   return var_dump($_GET);
+  // }
   public function update($id)
   {
-    // validate
-      // read more on validation at http://laravel.com/docs/validation
-      // $rules = array(
-      //     'promotionName'       => 'required',
-      //     'value'      => 'required|numeric'
-      // );
-      // $validator = Validator(input::all(), $rules);
-      //
-      // // process the login
-      // if ($validator->fails()) {
-      //     return Redirect('promotions/' . $id . '/edit')
-      //         ->withErrors($validator);
-      // } else {
-          // store
-          $promotion = Promotion::find($id);
-          $promotion->promotionName       = input::get('promotionName');
-          $promotion->value      = input::get('value');
-          $promotion->description      = input::get('description');
-          $promotion->expired = input::get('bday');
-          $promotion->issueBy = input::get('issueBy');
-          $promotion->save();
 
-          // redirect
-          session()->flash('message', 'Successfully updated promotion!');
-          return Redirect('promotions');
-      // }
+            $promotion = Promotion::find($id);
+            $promotion->PromotionName   = Input::get('promotionName');
+            $promotion->value      = Input::get('value');
+            $promotion->save();
+            return redirect('promotions');
+    // DB::table('promotions')
+    //         ->where('id', $_GET['promotionID'])
+    //         ->update(['promotionName' => $_GET['promotionName']])
+    //         ->update(['description' => $_GET['description']])
+    //         ->update(['value' => $_GET['value']])
+    //         ->update(['bday' => $_GET['bday']]);
   }
 
   /**

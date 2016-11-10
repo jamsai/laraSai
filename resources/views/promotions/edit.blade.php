@@ -17,25 +17,39 @@
         <li><a href="{{ URL::to('promotions/create') }}">Create a Promotion</a>
     </ul>
 </nav>
+
+<h1>edit a Promotion</h1>
 {{ Form::model($promotion, array('route' => array('promotions.update', $promotion->id), 'method' => 'PUT')) }}
-
-    <div class="form-group">
-        {{ Form::label('promotionName', 'promotionName') }}
-        {{ Form::text('promotionName', null, array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('value', 'value') }}
-        {{ Form::email('value', null, array('class' => 'form-control')) }}
-    </div>
-
-
-
-    {{ Form::submit('Edit the Nerd!', array('class' => 'btn btn-primary')) }}
-
-{{ Form::close() }}
-
-
+<!-- {!! Form::open(['url' => '/editPromotion', 'method' => 'get'])!!} -->
+<div class="form-group">
+    {!! Form::label('promotionID', 'promotionID:') !!}
+    {!! Form::text('promotionID', $promotion['id'] , ['class' => 'form-control']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('PromotionName', 'PromotionName:') !!}
+    {!! Form::text('promotionName', $promotion['promotionName'] , ['class' => 'form-control']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('Description', 'Description:') !!}
+    {!! Form::textarea('description', $promotion['description'], ['class' => 'form-control']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('Value', 'Value:') !!}
+    {!! Form::text('value', $promotion['value'], ['class' => 'form-control']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('issueBy', 'issueBy:') !!}
+    {!! Form::text('issueBy', $promotion['issueBy'], ['class' => 'form-control']) !!}
+</div>
+<div class="form-group">
+    {!! Form::label('expired', 'Start date:', ['class' => 'col-md-4 control-label']) !!}
+      <div class="col-md-6">
+       {!! Form::input('bday', $promotion['bday'], date('Y-m-d'), ['class' => 'form-control']) !!}
+      </div>
+</div>
+<div class="form-group">
+    {!!Form::submit('Click Me!');!!}
+</div>
 
 </div>
 </body>

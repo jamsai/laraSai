@@ -35,6 +35,9 @@ Route::get('/shopcontrol', function () {
     return view('shopcontrol');
 });
 
+
+// Route::get('/editPromotion', 'ShopController@shopeditPromotion');
+
 Route::auth();
 
 Route::get('/userprofile', function () {
@@ -97,10 +100,10 @@ Route::auth();
 
 Route::auth();
 
-Route::get('promotions/{id}/edit', function()
-{
-  return view('promotions/edit');
-});
+// Route::get('promotions/{id}/edit', function()
+// {
+//   return view('promotions/edit');
+// });
 
 Route::get('users/{id}/add/{points}', 'userController@add');
 
