@@ -40,6 +40,7 @@
 <div class="form-group">
     {!!Form::submit('Edit User!');!!}
 </div>
+
 </div>
 
 </body>
