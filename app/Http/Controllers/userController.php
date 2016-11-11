@@ -67,11 +67,20 @@ class userController extends Controller
     // }}
     public function index()
     {
-      $users = User::where('type', 1)->get();
+		$id = Auth::id();
+		$type = DB::table('users')->where('id', $id)->value('type');
+		
+		if($type==1)
+		{
+			return redirect('/');
+		}
 
-       // load the view and pass the nerds
-       return View('users.index')
-           ->with('users', $users);
+	
+		$users = User::where('type', 1)->get();
+
+		   // load the view and pass the nerds
+		return View('users.index')
+			->with('users', $users);
     }
     public function destroy($id)
     {

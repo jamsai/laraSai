@@ -44,11 +44,11 @@
 	<div class="sub-nav">
       <a href="/users"><i class="fa fa-sliders"></i> <font style="font-weight: bold;">Customer Management</font></a>
 	</div>
-	<a href="#" style="font-weight: bold;"><i class="fa fa-star"></i>&nbsp;&nbsp;โปรโมชั่นของร้าน - Shop Promotions</a>
+	<a href="#" style="font-weight: bold;"><i class="fa fa-star"></i>&nbsp;&nbsp;โปรโมชั่นของร้าน - Shop Promotions <span class="pull-right alert-numb">{{ DB::table('promotions')->count() }}</span></a>
 	<div class="sub-nav">
       <a href="/promotions"><i class="fa fa-sliders"></i> <font style="font-weight: bold;">Promotion Management</font></a>
 	</div>
-	<a href="#" style="font-weight: bold;"><i class="fa fa-link"></i>&nbsp;&nbsp;โค้ดแจ่มใสของร้าน - Your Redeem Codes</a>
+	<a href="#" style="font-weight: bold;"><i class="fa fa-link"></i>&nbsp;&nbsp;โค้ดแจ่มใสของร้าน - Your Redeem Codes <span class="pull-right alert-numb">{{ DB::table('redeemcodes')->count() }}</span></a>
 	<div class="sub-nav">
       <a href="/redeemcodes"><i class="fa fa-sliders"></i> <font style="font-weight: bold;">Redeem Code Management</font></a>
 	</div>
