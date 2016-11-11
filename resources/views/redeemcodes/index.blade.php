@@ -90,50 +90,48 @@
     </div>
 @endif
 
-<table class="table table-inverse">
-    <thead>
-        <tr>
-            <td> </td>
-            <td style="font-weight: bold;">ID</td>
-            <td style="font-weight: bold;">Redeem Code</td>
-            <td style="font-weight: bold;">Value</td>
-            <td style="font-weight: bold;">Action</td>
-            <td> </td>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach($redeemCodes as $key => $value)
-        <tr>
-            <td> </td>
-            <td>{{ $value->id }}</td>
-            <td>{{ $value->redeemcode }}</td>
-            <!-- <td>{{ $value->description }}</td> -->
-            <!-- <td>{{ $value->issueBy }}</td> -->
-            <td>{{ $value->value }}</td>
+<div class="container">
+  <table class="table table-inverse">
+      <thead>
+          <tr>
+              <td style="font-weight: bold;">ID</td>
+              <td style="font-weight: bold;">Redeem Code</td>
+              <td style="font-weight: bold;">Value</td>
+              <td style="font-weight: bold;">Action</td>
+          </tr>
+      </thead>
+      <tbody>
+      @foreach($redeemCodes as $key => $value)
+          <tr>
+              <td>{{ $value->id }}</td>
+              <td>{{ $value->redeemcode }}</td>
+              <!-- <td>{{ $value->description }}</td> -->
+              <!-- <td>{{ $value->issueBy }}</td> -->
+              <td>{{ $value->value }}</td>
 
-            <!-- we will also add show, edit, and delete buttons -->
-            <td>
+              <!-- we will also add show, edit, and delete buttons -->
+              <td>
 
-                <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
-                @if (Auth::user()->type==2)<!-- shop keeper -->
-                  {{ Form::open(array('url' => 'redeemcodes/' . $value->id)) }}
-                     {{ Form::hidden('_method', 'DELETE') }}
-                     {{ Form::submit('Delete this code', array('class' => 'btn btn-md')) }}
-                 {{ Form::close() }}
-               @endif
+                  <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
+                  @if (Auth::user()->type==2)<!-- shop keeper -->
+                    {{ Form::open(array('url' => 'redeemcodes/' . $value->id)) }}
+                       {{ Form::hidden('_method', 'DELETE') }}
+                       {{ Form::submit('Delete this code', array('class' => 'btn btn-md')) }}
+                   {{ Form::close() }}
+                 @endif
 
-                <!-- we will add this later since its a little more complicated than the other two buttons -->
+                  <!-- we will add this later since its a little more complicated than the other two buttons -->
 
-                <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
+                  <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
 
 
 
-            </td>
-            <td> </td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>
+              </td>
+          </tr>
+      @endforeach
+      </tbody>
+  </table>
+</div>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>

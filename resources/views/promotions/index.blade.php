@@ -98,22 +98,20 @@
 </div>
 @endif
 
+<div class="container">
 <table class="table table-inverse">
     <thead>
         <tr>
-            <td> </td>
             <td style="font-weight: bold;">ID</td>
             <td style="font-weight: bold;">Promotion Name</td>
             <td style="font-weight: bold;">Value</td>
             <td style="font-weight: bold;">Expiration Date</td>
             <td style="font-weight: bold;">Action</td>
-            <td> </td>
         </tr>
     </thead>
     <tbody>
     @foreach($promotions as $key => $value)
         <tr>
-            <td> </td>
             <td>{{ $value->id }}</td>
             <td>{{ $value->promotionName }}</td>
             <!-- <td>{{ $value->description }}</td> -->
@@ -142,12 +140,11 @@
                   <a class="action-button shadow animate yellow" href="{{ URL::to('promotions/' . $value->id . '/edit') }}" style= "font-size:1.6rem;">Edit</a>
                 @endif
                 @if (Auth::user()->type==1)<!-- customer -->
-                  <a class="btn btn-small btn-success" href="{{ URL::to('getreward/' . $value->id) }}" style= "font-size:1.6rem;">Get Reward</a>
+                  <a class="action-button shadow animate green" href="{{ URL::to('getreward/' . $value->id) }}" style= "font-size:1.6rem;">Get Reward</a>
                 @endif
 
 
             </td>
-            <td> </td>
         </tr>
     @endforeach
     </tbody>

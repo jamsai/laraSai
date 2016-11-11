@@ -92,12 +92,12 @@
   <div class="container">
     <div class="jumbotron text-left">
         <p>
-            <strong>ID:</strong> {{ $promotion->id }}<br>
-            <strong>Promotion Name:</strong> {{ $promotion->promotionName }}<br>
-            <strong>Description:</strong> {{ $promotion->description }}<br>
-            <strong>IssueBy:</strong> {{ $promotion->issueBy }}<br>
-            <strong>Value:</strong> {{ $promotion->value }}<br>
-            <strong>Expired Date:</strong> {{ $promotion->expired }}<br>
+            <strong>ID</strong> {{ $promotion->id }}<br>
+            <strong>Promotion Name</strong> {{ $promotion->promotionName }}<br>
+            <strong>Description</strong> {{ $promotion->description }}<br>
+            <strong>IssueBy</strong> {{ $promotion->issueBy }}<br>
+            <strong>Value</strong> {{ $promotion->value }}<br>
+            <strong>Expired Date</strong> {{ $promotion->expired }}<br>
         </p>
     </div>
   </div>
