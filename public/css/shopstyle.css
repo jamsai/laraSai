@@ -30,6 +30,76 @@ p span {
   -webkit-backface-visibility: hidden;
 }
 
+a:link { color:#FFFFFF; text-decoration: none; }
+a:visited { color:#FFFFFF; text-decoration: none; }
+a:hover { color:#FFFFFF; text-decoration: none; }
+a:active { color:#FFFFFF; text-decoration: underline; }
+
+.form-control
+{
+  font-size: 2.2rem;
+}
+
+.animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+	position: relative;
+	padding: 5px 15px;
+  margin: 0px 10px 10px 0px;
+
+	border-radius: 10px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+.blue
+{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+
+.red
+{
+	background-color: #E74C3C;
+	border-bottom: 5px solid #BD3E31;
+	text-shadow: 0px -2px #BD3E31;
+}
+
+.green
+{
+	background-color: #82BF56;
+	border-bottom: 5px solid #669644;
+	text-shadow: 0px -2px #669644;
+}
+
+.yellow
+{
+	background-color: #e1ae13;
+	border-bottom: 5px solid #b68c10;
+	text-shadow: 0px -2px #b68c10;
+}
+
+.gray
+{
+	background-color: #989caf;
+	border-bottom: 5px solid #666b84;
+	text-shadow: 0px -2px #666b84;
+}
+
+.action-button:active
+{
+  text-decoration: none;
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
+}
+
 /* Animate Background Image */
 @-webkit-keyframes aitf {
   0% {

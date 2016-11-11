@@ -94,8 +94,8 @@
     <thead>
         <tr>
             <td> </td>
-            <td style="font-weight: bold;">RedeemCodeID</td>
-            <td style="font-weight: bold;">RedeemCode</td>
+            <td style="font-weight: bold;">ID</td>
+            <td style="font-weight: bold;">Redeem Code</td>
             <td style="font-weight: bold;">Value</td>
             <td style="font-weight: bold;">Action</td>
             <td> </td>
