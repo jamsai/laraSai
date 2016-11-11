@@ -54,11 +54,7 @@
 	</div>
 	<a href="#" style="font-weight: bold;"><i class="fa fa-gear"></i>&nbsp;&nbsp;แก้ไขข้อมูลส่วนตัว</a>
 	<div class="sub-nav">
-		<div class="html invite">
-			<p>I would like to join <span class="dribbble">dribbble</span> community</p>
-			<p>Could you please invite me?</p>
-			<a class="btn" href="http://dribbble.com/khadkamhn/" target="_blank">Draft Me</a>
-		</div>
+		<a href="{{ URL::to('users/' . Auth::user()->id . '/edit') }}"><i class="fa fa-sliders"></i> <font style="font-weight: bold;">Profile Setting</font></a>
 	</div>
 </div>
 </div>

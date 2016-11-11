@@ -38,13 +38,19 @@
 			</div>
 		</div>
 	</div>
-	<a href="#" style="font-weight: bold;"><i class="fa fa-star"></i>&nbsp;&nbsp;แต้มแจ่มใสของคุณ <span class="pull-right alert-numb">{{ Auth::user()->score }}</span></a>
+	<a href="#" style="font-weight: bold;"><i class="fa fa-heart"></i>&nbsp;&nbsp;แต้มแจ่มใสของคุณ <span class="pull-right alert-numb">{{ Auth::user()->score }}</span></a>
 	<div class="sub-nav">
 		<a href="#" data-toggle="modal" data-target="#infoModal1">แต้มแจ่มใสคืออะไร ?</a>
 		<a href="#" data-toggle="modal" data-target="#infoModal2">แต้มแจ่มใส สามารถทำอะไรได้บ้าง ?</a>
 		<a href="#" data-toggle="modal" data-target="#infoModal3">ใช้แต้มแจ่มใสได้ที่ไหน ?</a>
 		<a href="#" data-toggle="modal" data-target="#infoModal4">จะได้รับแต้มแจ่มใสจากไหนบ้าง ?</a>
 	</div>
+
+	<a href="#" style="font-weight: bold;"><i class="fa fa-star"></i>&nbsp;&nbsp;โปรโมชั่นทั้งหมด</a>
+	<div class="sub-nav">
+			<a href="/promotions"><i class="fa fa-sliders"></i> <font style="font-weight: bold;">Promotion Management</font></a>
+	</div>
+
 	<a href="#" style="font-weight: bold;"><i class="fa fa-get-pocket"></i>&nbsp;&nbsp;ใส่โค้ดรับแต้มแจ่มใส</a>
 	<div class="sub-nav">
 		<form action='userRedeem' method='get'>
@@ -70,11 +76,7 @@
 	</div>
 	<a href="#" style="font-weight: bold;"><i class="fa fa-gear"></i>&nbsp;&nbsp;แก้ไขข้อมูลส่วนตัว</a>
 	<div class="sub-nav">
-		<div class="html invite">
-			<p>I would like to join <span class="dribbble">dribbble</span> community</p>
-			<p>Could you please invite me?</p>
-			<a class="btn" href="http://dribbble.com/khadkamhn/" target="_blank">Draft Me</a>
-		</div>
+		<a href="{{ URL::to('users/' . Auth::user()->id . '/edit') }}"><i class="fa fa-sliders"></i> <font style="font-weight: bold;">Profile Setting</font></a>
 	</div>
 </div>
 </div>
