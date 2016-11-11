@@ -137,7 +137,7 @@ class PromotionController extends Controller
               DB::table('users')
                     ->where('id', $id)
                     ->update(['score' => $score_left]);
-                    session()->flash('message', 'You got the reward');
+                    session()->flash('message', 'You got the reward name: '.$promotion->promotionName.' Point left: '.$score_left);
           }
           else{
             session()->flash('message', 'Not enough point');
