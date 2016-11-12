@@ -103,8 +103,8 @@ Done
     <div id="header">
         <div class="bg-overlay"></div>
         <div class="center text-center">
-            <div class="banner">
-                <h1 class="">JAMSAI | แจ่มใส</h1>
+            <div class="banner" id="buttonoverlay">
+                <h1>JAMSAI | แจ่มใส</h1>
             </div>
             <div class="subtitle"><h4>All-In-One Easy Reward Point Gatherer</h4></div>
         </div>
@@ -118,7 +118,17 @@ Done
         <section class="ss-style-top"></section>
         <div class="container inner">
             <h2 class="section-title text-center">แจ่มใสคืออะไร ?</h2>
-            <p class="lead main text-center">ไม่บอก.</p>
+            <p class="lead main text-center"></p>
+            	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;แจ่มใส คือการรวมตัวของร้านค้า บริการ ร้านอาหาร และอีกมากมาย เพื่อนำเสนอโปรโมชั่น และสิทธิพิเศษให้แก่คุณลูกค้า โดยมี <strong>แต้มแจ่มใส</strong> เป็นตัวกลาง คุณลูกค้าสามารถสะสมแต้มแจ่มใสได้จากการใช้บริการร้านค้าที่เข้าร่วมกับแจ่มใส และนำแต้มมาใช้แลกสิทธิประโยชน์ได้มากมาย
+
+            @if (Auth::guest())
+              <br><br><br>
+            <div align="center" id="buttonoverlay">
+              <a href="/register" class="action-button shadow animate purple" style="font-size: 4.0rem;">ร่วมเป็นส่วนหนึ่งกับแจ่มใส</a>
+            </div>
+            @endif
+
+            <br><br>
             <div class="row text-center story">
                 <div class="col-sm-4">
                     <div class="col-wrapper">
@@ -155,28 +165,33 @@ Done
                 <div class="col-sm-3">
                     <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-shopping-bag"></i> </div>
-                    <h4>9796518</h4>
+                    <h4>{{ DB::table('users')->where('type', 2)->count() }}</h4>
                     <p>ร้านค้าที่เข้าร่วมกับเรา</p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-star"></i> </div>
-                    <h4>5939472</h4>
+                    <h4>{{ DB::table('promotions')->count() }}</h4>
                     <p>โปรโมชั่น</p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-user-circle-o"></i> </div>
-                    <h4>2188764</h4>
+                    <h4>{{ DB::table('users')->where('type', 1)->count() }}</h4>
                     <p>สมาชิกที่ใช้งานแจ่มใส</p>
                 </div>
             </div>
             <div class="col-sm-3">
                 <div class="col-wrapper">
                     <div class="icon-border bm10"> <i class="fa fa-users"></i> </div>
-                    <h4>1480523</h4>
+                    <h4>
+                      <script language="JavaScript">var fhsh = document.createElement('script');var fhs_id_h = "3199478";
+                        fhsh.src = "//s1.freehostedscripts.net/ocount.php?site="+fhs_id_h+"&name=&a=1";
+                        document.head.appendChild(fhsh);document.write("<span id='h_"+fhs_id_h+"'></span>");
+                        </script>
+                    </h4>
                     <p>จำนวนผู้เข้าชม</p>
                     </div>
                 </div>
