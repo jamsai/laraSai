@@ -104,7 +104,9 @@
 
 <div class="container" align="center">
   <a href="javascript:history.go(-1)" class="action-button shadow animate blue">Back</a>
-  <a class="action-button shadow animate yellow" href="{{ URL::to('promotions/' . $promotion->id . '/edit') }}">Edit</a>
+  @if(Auth::user()->type == 2)
+    <a class="action-button shadow animate yellow" href="{{ URL::to('promotions/' . $promotion->id . '/edit') }}">Edit</a>
+  @endif
 </div>
 
 <!-- JavaScripts -->
