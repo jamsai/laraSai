@@ -122,7 +122,10 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+                    @if (Auth::guest())
+                    @else
                     <li><a href="{{ url('/home') }}"><i class="fa fa-user"></i> My Profile</a></li>
+                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
