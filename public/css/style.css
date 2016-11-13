@@ -926,7 +926,7 @@ a:active { color:#FFFFFF; text-decoration: underline; }
   }
 }
 
-#buttonoverlay a
+#buttonoverlay
 {
 animation-name: buttonFadeInOut;
 animation-timing-function: ease-in-out;

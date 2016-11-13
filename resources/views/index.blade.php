@@ -130,9 +130,14 @@ Done
 
             @if (Auth::guest())
               <br><br><br>
-            <div align="center" id="buttonoverlay">
+            <div align="center">
               <a href="/register" class="action-button shadow animate purple" style="font-size: 4.0rem;">ร่วมเป็นส่วนหนึ่งกับแจ่มใส</a>
             </div>
+            <div align="center" id="buttonoverlay">
+
+              <p><br><font size="6rem"><font color="#ff3e5a">พิเศษ</font> สมัครแจ่มใสวันนี้ <font color="#800080">รับฟรี 100 แต้มทันที</font></font></p>
+            </div>
+
             @endif
 
             <br><br>
