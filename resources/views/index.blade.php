@@ -90,12 +90,18 @@ Done
                 <li style="display:none;"><a href="#header"></a></li>
             </ul>
         </div><!--/.navbar-collapse -->
-        @if (Auth::check())
-        <div class="fab-container"><a href="/home">
-            <div tooltip="View My Profile" class="profile fab"></div></a>
+
+        <div class="fab-container">
+            @if (Auth::check())
+            <a href="/home"><div tooltip="View My Profile" class="profile fab"></div></a>
+            @else
+            <a href="/login"><div tooltip="Log In" class="profile fab"></div></a>
+            @endif
           <div tooltip="Back To Top" class="top fab"></div>
         </div>
-        @endif
+
+
+
         </div><!-- container -->
     </div><!-- menu -->
 
