@@ -69,14 +69,17 @@ class userController extends Controller
     {
 		$id = Auth::id();
 		$type = DB::table('users')->where('id', $id)->value('type');
-		
+
 		if($type==1)
 		{
 			return redirect('/');
 		}
-
-	
-		$users = User::where('type', 1)->get();
+    if($type==2){
+      $users = User::where('type', 1)->get();
+    }
+    if($type==3){
+      $users = User::all();
+    }
 
 		   // load the view and pass the nerds
 		return View('users.index')

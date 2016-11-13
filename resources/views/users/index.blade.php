@@ -115,19 +115,19 @@
               <!-- we will also add show, edit, and delete buttons -->
               <td>
                 <a class="action-button shadow animate blue" href="{{ URL::to('users/' . $value->id) }}" style= "font-size:1.6rem;">Show</a>
-                @if (Auth::user()->type==2)<!-- shop keeper -->
+                @if (Auth::user()->type==3)<!-- admin -->
                 <a class="action-button shadow animate yellow" href="{{ URL::to('users/' . $value->id . '/edit') }}" style= "font-size:1.6rem;">Edit</a>
                 @endif
-
+                @if (Auth::user()->type==2)
                 <a class="action-button shadow animate green" href="{{ URL::to('users/' . $value->id . '/add/10') }}" style= "font-size:1.6rem;">+10 point</a>
                 <a class="action-button shadow animate green" href="{{ URL::to('users/' . $value->id . '/add/100') }}" style= "font-size:1.6rem;">+100 point</a>
 
                 <a class="action-button shadow animate red" href="{{ URL::to('users/' . $value->id . '/remove/10') }}" style= "font-size:1.6rem;">-10 point</a>
                 <a class="action-button shadow animate red" href="{{ URL::to('users/' . $value->id . '/remove/100') }}" style= "font-size:1.6rem;">-100 point</a>
-
+                @endif
 
                   <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
-                  @if (Auth::user()->type==2)<!-- shop keeper -->
+                  @if (Auth::user()->type==3)<!-- admin -->
                     {{ Form::open(array('url' => 'users/' . $value->id, 'class' => 'pull-right')) }}
                        {{ Form::hidden('_method', 'DELETE') }}
                        {{ Form::submit('Delete this customer', array('class' => 'btn btn-md')) }}
