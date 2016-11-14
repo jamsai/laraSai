@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Promotions</title>
-
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
   <!-- Styles -->
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap.min.css'>
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap-theme.min.css'>
@@ -48,7 +48,7 @@
               <ul class="nav navbar-nav">
                   <li><a href="/promotions"><i class="fa fa-star"></i> Promotions</a></li>
               </ul>
-            
+
               <!-- Right Side Of Navbar -->
               <ul class="nav navbar-nav navbar-right">
                   <!-- Authentication Links -->
