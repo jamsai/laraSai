@@ -117,15 +117,17 @@ class shopController extends Controller
         else {
           $id = Auth::id();
           $type = DB::table('users')->where('id', $id)->value('type');
+
           if($type == 1){
             return view('permissionErrorStatus')
             ->with('title', "You don't have permission!");
           }
           else{
+            $issueBy = DB::table('users')->where('id', $id)->value('name');
             DB::table('promotions')->insert([
             'promotionName' => $_GET['promotionName'],
             'description' => $_GET['description'],
-            'issueBy' => $_GET['issueBy'],
+            'issueBy' => $issueBy,
             'expired' => $_GET['bday'],
             'value' => $_GET['value']]);
 
