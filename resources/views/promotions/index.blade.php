@@ -105,7 +105,7 @@
             <td style="font-weight: bold;">ID</td>
             <td style="font-weight: bold;">Promotion Name</td>
             <td style="font-weight: bold;">Value</td>
-            <td style="font-weight: bold;">Expiration</td>
+            <td style="font-weight: bold;">Expire</td>
             <td style="font-weight: bold;">Issue By</td>
             <td style="font-weight: bold;">Action</td>
         </tr>
