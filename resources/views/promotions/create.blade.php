@@ -101,7 +101,7 @@
   </div>
   <div class="form-group">
       {!! Form::label('issueBy', 'Issue By') !!}
-      {!! Form::text('issueBy', null, ['class' => 'form-control']) !!}
+      {!! Form::text('issueBy', Auth::user()->name, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
       {!! Form::label('expired', 'Expire date:', ['class' => 'control-label']) !!}
