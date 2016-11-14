@@ -406,6 +406,7 @@ part of Software Engineering class
         				<i class="fa fa-check"></i> จากการนำโค้ดมากรอกใน Profile ที่ปุ่ม <font color="#b98eb1"><i class="fa fa-exchange"></i> ใช้แต้มแลกรางวัล</font> โดยโค้ดจะได้จากการร่วมกิจกรรมจากทางร้านค้า หรืออื่นๆ<br>
         				<i class="fa fa-check"></i> 100 แต้ม ทันทีที่สมัครสมาชิก<br>
                 <strong>Q : นำแต้มไปแลกโปรโมชั่นอย่างไร</strong><br>
+                &nbsp;&nbsp;&nbsp;แลกได้ที่หน้า โปรโมชั่น โดยเมื่อแลกแล้ว ลูกค้าจะได้รับรหัส PIN <font color="red"><strong>สำคัญมาก !</strong></font> กรุณาจำรหัสไว้หรือหาอะไรมาจด เพื่อนำไปใช้ยืนยันกับทางร้านค้า<br>
 
                 </div><!-- col-md-6 -->
                 <div class="col-md-5 col-md-offset-1">
