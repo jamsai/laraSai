@@ -1,28 +1,15 @@
 <!--
         Zreast the Nerazzurri
 
-Color Palette
-- http://colorpalettes.net/color-palette-3062
+Jamsai | Easy Reward Piont Gatherer
 
-BackEnd Template
-- https://colorlib.com/wp/free-html5-admin-dashboard-templates/
+BETA Version 1.0
 
-Not forget it
-- http://www.siamhtml.com/%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%81%E0%B8%95%E0%B8%81%E0%B8%95%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87-font-size-%E0%B9%81%E0%B8%9A%E0%B8%9A-percent-em-px-pt/
+Developer :
+Zreast, pongsakm2007, Halloweenrr, Anurak, Clavis, Sweetyblack
+as Computer Engineering KMITL
 
-Current Requirement
-
-- Add logged as user to navbar
-- Log in modal
-
-Done
-
-# edit Header Photo to some great material
-# Add Site Description
-# localize CDN
-# init webfont
-# Pick some cool palette
-# Design jamsai icon
+part of Software Engineering class
 
 -->
 
