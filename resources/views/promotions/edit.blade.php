@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Promotions</title>
-
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
   <!-- Styles -->
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap.min.css'>
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap-theme.min.css'>
@@ -101,10 +101,6 @@
   <div class="form-group">
       {!! Form::label('Value', 'Value') !!}
       {!! Form::text('value', $promotion['value'], ['class' => 'form-control']) !!}
-  </div>
-  <div class="form-group">
-      {!! Form::label('issueBy', 'Issue By') !!}
-      {!! Form::text('issueBy', $promotion['issueBy'], ['class' => 'form-control']) !!}
   </div>
   <!-- <div class="form-group">
       {!! Form::label('bday', 'Expired:', ['class' => 'col-md-4 control-label']) !!}

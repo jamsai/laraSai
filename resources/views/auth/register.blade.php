@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 control-label">Name <font color="red">*</font></label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" placeholder="Your full name" value="{{ old('name') }}">
+                                <input id="name" type="text" class="form-control" name="name" placeholder="Your Full Name / Shop Name" value="{{ old('name') }}">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -119,7 +119,7 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="action-button shadow animate green">
                                     <i class="fa fa-btn fa-user"></i> Register
                                 </button>
                             </div>

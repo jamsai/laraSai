@@ -74,7 +74,7 @@
 
   <p align="center">
     <span>
-      {{ $user->username }}
+      Your Customer Rewards
     </span>
     &mdash; {{ Auth::user()->username }}
     @if(Auth::user()->type == 1)
@@ -86,49 +86,50 @@
   </p>
   <br><br>
 
-  <div class="container">
-    <div class="jumbotron text-left">
-      <table style="width:100%;">
-        <tr>
-          <td><strong>ID</strong></td>
-          <td>{{ $user->id }}</td>
-        </tr>
-        <tr>
-          <td><strong>Name</strong></td>
-          <td>{{ $user->name }}</td>
-        </tr>
-        <tr>
-          <td><strong>User Name</strong></td>
-          <td>{{ $user->username }}</td>
-        </tr>
-        <tr>
-          <td><strong>E-mail</strong></td>
-          <td>{{ $user->email }}</td>
-        </tr>
-        <tr>
-          <td><strong>Phone Number</strong></td>
-          <td>{{ $user->phonenumber }}</td>
-        </tr>
-        <tr>
-          <td><strong>Point</strong></td>
-          <td>{{ $user->score }}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
+<!-- will be used to show any messages -->
+@if (Session::has('message'))
+    <div class="alert alert-info">{{ Session::get('message') }}</div>
+@endif
 
-  <div class="container" align="center">
-    <a href="javascript:history.go(-1)" class="action-button shadow animate blue">Back</a>
-    @if(Auth::user()->type == 3)
-      <a class="action-button shadow animate yellow" href="{{ URL::to('users/' . $user->id . '/edit') }}">Edit</a>
-    @endif
-  </div>
+<div class="container">
+  <table class="table table-inverse">
+      <thead>
+          <tr>
+              <td><strong>ID</strong></td>
+              <td><strong>User Name</strong></td>
+              <td><strong>Promotion</strong></td>
+
+              <td><strong>Actions</strong></td>
+          </tr>
+      </thead>
+      <tbody>
+      @foreach($usergotrewards as $key => $value)
+          <tr>
+              <td>{{ $value->id }}</td>
+              <td>{{ $value->username }}</td>
+              <td>{{ $value->promotionName }}</td>
+
+
+              <!-- we will also add show, edit, and delete buttons -->
+              <td>
+
+                {{ Form::open(array('url' => 'rewards/' . $value->id, 'class' => 'pull-left')) }}
+                 {{ Form::hidden('_method', 'DELETE') }}
+                 {{ Form::submit('Achive', array('class' => 'action-button shadow animate yellow')) }}
+             {{ Form::close() }}
+
+              </td>
+          </tr>
+      @endforeach
+      </tbody>
+  </table>
 
 </div>
 <!-- JavaScripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-
+</body>
+</html>
 </body>
 </html>

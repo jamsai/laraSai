@@ -861,7 +861,6 @@ a:active { color:#FFFFFF; text-decoration: underline; }
 	position: relative;
 	padding: 5px 15px;
   margin: 0px 10px 10px 0px;
-
 	border-radius: 10px;
 	color: #FFF;
 	text-decoration: none;
@@ -965,4 +964,10 @@ animation-direction: alternate;
 	100% {
 	opacity:0.6;
 	}
+}
+
+input,
+input::-webkit-input-placeholder {
+    line-height: 3;
+		font:400 14px/18px Roboto, sans-serif;
 }

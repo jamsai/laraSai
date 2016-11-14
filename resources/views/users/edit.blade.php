@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Customers</title>
-
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
   <!-- Styles -->
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap.min.css'>
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap-theme.min.css'>

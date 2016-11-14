@@ -40,6 +40,10 @@
 			</div>
 		</div>
 	</div>
+	<a href="#" style="font-weight: bold;"><i class="fa fa-gear"></i>&nbsp;&nbsp;ยืนยันการใช้โปรโมชั่น - Verify Promotions <span class="pull-right alert-numb">{{ DB::table('usergotrewards')->count() }}</span></a>
+	<div class="sub-nav">
+		<a href="/rewards"><i class="fa fa-sliders"></i> <font style="font-weight: bold;">Verify Management</font></a>
+	</div>
 	<a href="#" style="font-weight: bold;"><i class="fa fa-users"></i>&nbsp;&nbsp;ลูกค้าแจ่มใสของคุณ - Your Customer <span class="pull-right alert-numb">{{ DB::table('users')->where('type', 1)->count() }}</span></a>
 	<div class="sub-nav">
       <a href="/users"><i class="fa fa-sliders"></i> <font style="font-weight: bold;">Customer Management</font></a>

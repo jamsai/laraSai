@@ -20,6 +20,8 @@ class PromotionController extends Controller
    */
   public function index()
   {
+    $promotions = Promotion::whereDate('expired', '<',date('Y-m-d H:i:s'));
+    $promotions->delete();
     $promotions = Promotion::all();
 
      // load the view and pass the nerds
@@ -134,6 +136,9 @@ class PromotionController extends Controller
 
           if($score>=$promotion->value){
               $score_left = $score-$promotion->value;
+              DB::table('usergotrewards')->insert(
+                ['username' => $name, 'promotionName' => $promotion->promotionName,'issueBy' => $promotion->issueBy]
+              );
               DB::table('users')
                     ->where('id', $id)
                     ->update(['score' => $score_left]);

@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Promotions</title>
-
+  <link rel="shortcut icon" href="assets/images/favicon.ico" />
   <!-- Styles -->
   <link rel='stylesheet prefetch' href='../css/bootstrap.min.css'>
   <link rel='stylesheet prefetch' href='../css/bootstrap-theme.min.css'>
@@ -103,9 +103,10 @@
     <thead>
         <tr>
             <td style="font-weight: bold;">ID</td>
-            <td style="font-weight: bold;">Promotion Name</td>
+            <td style="font-weight: bold;">Name</td>
             <td style="font-weight: bold;">Value</td>
-            <td style="font-weight: bold;">Expiration Date</td>
+            <td style="font-weight: bold;">Expire</td>
+            <td style="font-weight: bold;">Issue By</td>
             <td style="font-weight: bold;">Action</td>
         </tr>
     </thead>
@@ -118,12 +119,13 @@
             <!-- <td>{{ $value->issueBy }}</td> -->
             <td>{{ $value->value }}</td>
             <td>{{ $value->expired }}</td>
+            <td>{{ $value->issueBy }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>
 
                 <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
-                @if (Auth::user()->type==2)<!-- shop keeper -->
+                @if (Auth::user()->type==2 && $value->issueBy == Auth::user()->username)<!-- shop keeper -->
                   {{ Form::open(array('url' => 'promotions/' . $value->id, 'class' => 'pull-right')) }}
                      {{ Form::hidden('_method', 'DELETE') }}
                      {{ Form::submit('Delete this promotion', array('class' => 'btn btn-md')) }}
@@ -136,7 +138,7 @@
                 <a class="action-button shadow animate blue" href="{{ URL::to('promotions/' . $value->id) }}" style= "font-size:1.6rem;">Show</a>
 
                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                @if (Auth::user()->type==2)<!-- shop keeper -->
+                @if (Auth::user()->type==2 && $value->issueBy == Auth::user()->username)<!-- shop keeper -->
                   <a class="action-button shadow animate yellow" href="{{ URL::to('promotions/' . $value->id . '/edit') }}" style= "font-size:1.6rem;">Edit</a>
                 @endif
                 @if (Auth::user()->type==1)<!-- customer -->
