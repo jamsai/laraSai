@@ -134,6 +134,9 @@ class PromotionController extends Controller
 
           if($score>=$promotion->value){
               $score_left = $score-$promotion->value;
+              DB::table('usergotrewards')->insert(
+                ['username' => $name, 'promotionName' => $promotion->promotionName,'issueBy' => $promotion->issueBy]
+              );
               DB::table('users')
                     ->where('id', $id)
                     ->update(['score' => $score_left]);

@@ -115,6 +115,8 @@ Route::resource('redeemcodes', 'redeemCodeController');
 
 Route::resource('users', 'userController');
 
+Route::resource('rewards', 'UsergotrewardController');
+
 Route::get('getreward/{id}', 'PromotionController@getReward');
 
 
