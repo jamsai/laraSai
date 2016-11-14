@@ -268,7 +268,7 @@ part of Software Engineering class
                   <div class="menu-titles"><h1 class="">พี่วิ ไข่เจียว</h1></div>
                   <div class="menu-items ">
                       <ul>
-                          <li>ใครไม่เจียว พี่วิเจียว ,ไข่เจียว เจียวดาว ถ้าจะเอาไข่ดาวไปทอดแดกเอง</li>
+                          <li>ใครไม่เจียว พี่วิเจียว ,ไข่เจียว เจียวดาว ถ้าจะเอาไข่ดาวไปทอดเอง</li>
                       </ul>
                   </div>
               </div>
