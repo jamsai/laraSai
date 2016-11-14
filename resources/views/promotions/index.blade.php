@@ -118,6 +118,7 @@
             <!-- <td>{{ $value->issueBy }}</td> -->
             <td>{{ $value->value }}</td>
             <td>{{ $value->expired }}</td>
+            <td>{{ $value->issueBy }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>
