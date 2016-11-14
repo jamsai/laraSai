@@ -97,7 +97,7 @@
           <td>{{ $promotion->id }}</td>
         </tr>
         <tr>
-          <td><strong>Promotion Name</strong></td>
+          <td><strong>Name</strong></td>
           <td>{{ $promotion->promotionName }}</td>
         </tr>
         <tr>
@@ -105,7 +105,7 @@
           <td>{{ $promotion->description }}</td>
         </tr>
         <tr>
-          <td><strong>IssueBy</strong></td>
+          <td><strong>Issue by</strong></td>
           <td>{{ $promotion->issueBy }}</td>
         </tr>
         <tr>
@@ -113,7 +113,7 @@
           <td>{{ $promotion->value }}</td>
         </tr>
         <tr>
-          <td><strong>Expiration Date</strong></td>
+          <td><strong>Expire</strong></td>
           <td>{{ $promotion->expired }}</td>
         </tr>
       </table>
