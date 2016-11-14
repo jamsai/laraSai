@@ -965,9 +965,3 @@ animation-direction: alternate;
 	opacity:0.6;
 	}
 }
-
-input,
-input::-webkit-input-placeholder {
-    line-height: 3;
-		font:400 14px/18px Roboto, sans-serif;
-}

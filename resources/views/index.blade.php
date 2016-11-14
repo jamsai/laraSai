@@ -268,7 +268,7 @@ part of Software Engineering class
                   <div class="menu-titles"><h1 class="">พี่วิ ไข่เจียว</h1></div>
                   <div class="menu-items ">
                       <ul>
-                          <li>ใครไม่เจียว พี่วิเจียว ,ไข่เจียว เจียวดาว ถ้าจะเอาไข่ดาวไปทอดเอง</li>
+                          <li>ใครไม่เจียว พี่วิเจียว ,ไข่เจียว เจียวดาว ถ้าจะเอาไข่ดาวไปทอดแดกเอง</li>
                       </ul>
                   </div>
               </div>
@@ -310,13 +310,13 @@ part of Software Engineering class
 
                             <h3><a href="#">ข้าวต้มฟรี</a></h3>
 
-                            <p>สมภพข้าวต้มปลา ร่วมเป็นส่วนหนึ่งแสดงความยินดี แลกรับข้าวต้มฟรีได้เลยที่ร้าน</p>
+                            <p>ของฟรีอร่อยอยู่แล้ว</p>
 
-                            <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
+                            <a class="btn btn-danger" href="#">สั่งซื้อ</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
-                        <span class="hot-tag br-red">50pt</span>
+                        <span class="hot-tag br-red">$16</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -324,19 +324,19 @@ part of Software Engineering class
 
                     <div class="pricing-item">
 
-                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal2.jpg" alt="deal"></a>
+                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal1.jpg" alt="deal"></a>
 
                         <div class="pricing-item-details">
 
-                            <h3><a href="#">กือโป๊ะรูสมิแล</a></h3>
+                            <h3><a href="#">ข้าวต้มฟรี</a></h3>
 
-                            <p>หัวข้าวเกรียบปลาแท้ กินคู่กับชา วันนี้ที่ชาชักโกอิน ฟรีทันทีเมื่อสั่งชาชัก 1 แก้ว</p>
+                            <p>ของฟรีอร่อยอยู่แล้ว</p>
 
-                            <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
+                            <a class="btn btn-danger" href="#">สั่งซื้อ</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
-                        <span class="hot-tag br-red">30pt</span>
+                        <span class="hot-tag br-red">$16</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -344,19 +344,19 @@ part of Software Engineering class
 
                     <div class="pricing-item">
 
-                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal3.jpg" alt="deal"></a>
+                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal1.jpg" alt="deal"></a>
 
                         <div class="pricing-item-details">
 
-                            <h3><a href="#">สตรอว์เบอรี่บิงซู 1 แถม 1</a></h3>
+                            <h3><a href="#">ข้าวต้มฟรี</a></h3>
 
-                            <p>เมื่อสั่งสตรอว์เบอรี่บิงซู 1 ถ้วย แถมฟรีทันที 1 ถ้วย เฉพาะลูกค้าแจ่มใสเท่านั้น</p>
+                            <p>ของฟรีอร่อยอยู่แล้ว</p>
 
-                            <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
+                            <a class="btn btn-danger" href="#">สั่งซื้อ</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
-                        <span class="hot-tag br-red">100pt</span>
+                        <span class="hot-tag br-red">$16</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -364,29 +364,24 @@ part of Software Engineering class
 
                     <div class="pricing-item">
 
-                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal4.jpg" alt="deal"></a>
+                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal1.jpg" alt="deal"></a>
 
                         <div class="pricing-item-details">
 
-                            <h3><a href="#">หนังสือ เลี้ยงลูกให้เป็นคนปกติ ราคาพิเศษ</a></h3>
+                            <h3><a href="#">ข้าวต้มฟรี</a></h3>
 
-                            <p>จากไม่รู้กี่บาท เหลือเพียง 39 บาทเท่านั้นเมื่อซื้อที่ร้านหนังสือดอกหญ้าทุกสาขา</p>
-                              
-                            <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
+                            <p>ของฟรีอร่อยอยู่แล้ว</p>
+
+                            <a class="btn btn-danger" href="#">สั่งซื้อ</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
-                        <span class="hot-tag br-red">50pt</span>
+                        <span class="hot-tag br-red">$16</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
-            <br><br>
-            @if (Auth::user())
-            <div align="center" id="buttonoverlay">
-              <a href="/promotions" class="action-button shadow animate yellow" style="font-size: 3.5rem;">ดูโปรโมชั่นทั้งหมด</a>
-            </div>
-            @endif
+
         </div>
         <!-- /.container -->
     </div><!-- /#special-offser -->
@@ -397,33 +392,77 @@ part of Software Engineering class
     <div id="reservation" class="light-wrapper">
         <section class="ss-style-top"></section>
         <div class="container inner">
-            <h2 class="section-title text-center">ติดต่อ สอบถาม และคำถามที่พบบ่อย</h2>
-            <p class="lead main text-center"> </p>
+            <h2 class="section-title text-center">ร่วมเป็นส่วนหนึ่งกับแจ่มใส</h2>
+            <p class="lead main text-center">เอาจริงดิ</p>
             <div class="row">
                 <div class="col-md-6">
                     <form class="form form-table" method="post" name="">
-                            <h2><i class="fa fa-question-circle" aria-hidden="true"></i><strong> FAQ :</strong></h4>
-                <strong>Q : แต้มแจ่มใสคืออะไร ?</strong><br>
-                &nbsp;&nbsp;&nbsp;แต้มแจ่มใส เป็นแต้มที่เพิ่มความสะดวกให้ผู้ใช้งาน เรารวบรวมร้านค้าที่เข้าร่วมกับแจ่มใสและใช้แต้มนี้ร่วมกัน เพื่อสิทธิประโยชน์ในการแลกของรางวัล และส่วนลดมากมาย<br><br>
-                <strong>Q : สามารถได้แต้มแจ่มใสจากไหนบ้าง ?</strong><br>
-                &nbsp;&nbsp;&nbsp;แต้มแจ่มใสมีวิธีได้มาหลายวิธี<br>
-        				<i class="fa fa-check"></i> จากร้านค้าที่เข้าร่วมกับแจ่มใส เมื่อคุณใช้บริการตรงตามเงื่อนไข พนักงานจะถาม ID/เบอร์โทรศัพท์คุณเพื่อสะสมคะแนน<br>
-        				<i class="fa fa-check"></i> จากการนำโค้ดมากรอกใน Profile ที่ปุ่ม <font color="#b98eb1"><i class="fa fa-exchange"></i> ใช้แต้มแลกรางวัล</font> โดยโค้ดจะได้จากการร่วมกิจกรรมจากทางร้านค้า หรืออื่นๆ<br>
-        				<i class="fa fa-check"></i> 100 แต้ม ทันทีที่สมัครสมาชิก<br><br>
-                <strong>Q : นำแต้มไปแลกโปรโมชั่นอย่างไร ?</strong><br>
-                &nbsp;&nbsp;&nbsp;แลกได้ที่หน้าโปรโมชั่น โดยเมื่อแลกแล้ว กรุณาแจ้ง ID หรือเบอร์โทรศัพท์ พร้อมชื่อโปรโมชั่นที่ใช้ เพื่อยืนยันกับทางร้านค้า<br>
+                        <div class="form-group">
+                            <h4>สมัครสมาชิกกับเราเพื่อรับสิทธิประโยชน์มากมาย แน่นอนว่าฟรีไม่มีค่าใช้จ่ายใดๆ</h4>
+                        </div>
 
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 form-group">
+                            <label class="sr-only" for="first_name1">first name</label>
+                            <input class="form-control hint" type="text" id="first_name1" name="first_name" placeholder="First name" required="">
+                          </div>
+                          <div class="col-lg-6 col-md-6 form-group">
+                            <label class="sr-only" for="last_name1">last name</label>
+                            <input class="form-control hint" type="text" id="last_name1" name="last_name" placeholder="Last name" required="">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 form-group">
+                            <label class="sr-only" for="email1">email</label>
+                            <input class="form-control hint" type="email" id="email1" name="email" placeholder="Email@domain.com" required="">
+                          </div>
+                          <div class="col-lg-6 col-md-6 form-group">
+                            <label class="sr-only" for="phone1">phone</label>
+                            <input class="form-control hint" type="text" id="phone1" name="phone" placeholder="Phone" required="">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 form-group">
+                            <label class="sr-only" for="reserv_date1">reservation date</label>
+                            <input class="form-control datepicker hasDatepicker hint" type="text" id="reserv_date1" name="reserv_date" placeholder="Reservation date" required="">
+                          </div>
+                          <div class="col-lg-6 col-md-6 form-group">
+                            <label class="sr-only" for="numb_guests1">number of guests</label>
+                            <input class="form-control hint" type="text" id="numb_guests1" name="numb_guests" placeholder="Number of guests" required="">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-6 col-md-6 form-group">
+                            <label class="sr-only" for="alt_reserv_date1">time from</label>
+                            <input class="form-control datepicker hasDatepicker hint" type="text" id="alt_reserv_date1" name="alt_reserv_date" placeholder="Time from" required="">
+                          </div>
+                          <div class="col-lg-6 col-md-6 form-group">
+                            <label class="sr-only" for="time1">time</label>
+                            <input class="form-control timepicker ui-timepicker-input hint" type="text" id="time1" name="time" placeholder="Time to" required="" autocomplete="off">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12">
+                            <p></p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12">
+                            <button type="submit" class="btn btn-danger btn-lg">Reserve!</button>
+                          </div>
+                        </div>
+                      </form>
                 </div><!-- col-md-6 -->
                 <div class="col-md-5 col-md-offset-1">
 
                     <h3><i class="fa fa-info-circle fa-fw"></i>ติดต่อเรา</h3>
-                    <p>Mon to Sat: 10:00 AM -  7:00 PM<br>Sun: 12:30 PM - 9:00 PM</p>
+                    <p>Mon to Sat: 6:00 PM -  1:00 AM<br>Sun: 5:30 PM - 12:00 AM</p>
 
                     <h3><i class="fa fa-map-marker fa-fw"></i>Directions</h3>
                     <p>ภาควิชาวิศวกรรมคอมพิวเตอร์ อาคารปฏิบัติการวิศวกรรม 2 (ECC) สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
 
                     <h3><i class="fa fa-mobile fa-fw"></i>Contacts</h3>
-                    <p>Email: info@jamsai.arcanaforce.net</p>
+                    <p>Email: <a href="mailto:zreast@gmail.com">zreast@gmail.com</a></p>
                     <p>Phone: +66 081-234-5678</p>
 
                 </div><!-- col-md-6 -->
