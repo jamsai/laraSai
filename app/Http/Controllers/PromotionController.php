@@ -20,6 +20,8 @@ class PromotionController extends Controller
    */
   public function index()
   {
+    $promotions = Promotion::whereDate('expired', '<',date('Y-m-d H:i:s'));
+    $promotions->delete();
     $promotions = Promotion::all();
 
      // load the view and pass the nerds
