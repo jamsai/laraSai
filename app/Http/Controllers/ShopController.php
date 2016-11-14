@@ -123,7 +123,7 @@ class shopController extends Controller
             ->with('title', "You don't have permission!");
           }
           else{
-            $issueBy = DB::table('users')->where('id', $id)->value('username');
+            $issueBy = DB::table('users')->where('id', $id)->value('name');
             DB::table('promotions')->insert([
             'promotionName' => $_GET['promotionName'],
             'description' => $_GET['description'],

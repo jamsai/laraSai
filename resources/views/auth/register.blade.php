@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 control-label">Name <font color="red">*</font></label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" placeholder="Your full name" value="{{ old('name') }}">
+                                <input id="name" type="text" class="form-control" name="name" placeholder="Your Full Name / Shop Name" value="{{ old('name') }}">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">

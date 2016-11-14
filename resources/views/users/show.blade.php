@@ -88,15 +88,32 @@
 
   <div class="container">
     <div class="jumbotron text-left">
-
-        <p align>
-            <strong>ID</strong> {{ $user->id }}<br>
-            <strong>Name</strong> {{ $user->name }}<br>
-            <strong>User Name</strong> {{ $user->username }}<br>
-            <strong>E-mail</strong> {{ $user->email }}<br>
-            <strong>Phone Number</strong> {{ $user->phonenumber }}<br>
-            <strong>Point</strong> {{ $user->score }}<br>
-        </p>
+      <table style="width:100%;">
+        <tr>
+          <td><strong>ID</strong></td>
+          <td>{{ $user->id }}</td>
+        </tr>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>{{ $user->name }}</td>
+        </tr>
+        <tr>
+          <td><strong>User Name</strong></td>
+          <td>{{ $user->username }}</td>
+        </tr>
+        <tr>
+          <td><strong>E-mail</strong></td>
+          <td>{{ $user->email }}</td>
+        </tr>
+        <tr>
+          <td><strong>Phone Number</strong></td>
+          <td>{{ $user->phonenumber }}</td>
+        </tr>
+        <tr>
+          <td><strong>Point</strong></td>
+          <td>{{ $user->score }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 

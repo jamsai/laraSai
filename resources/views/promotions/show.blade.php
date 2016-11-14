@@ -91,14 +91,32 @@
   <br><br>
   <div class="container">
     <div class="jumbotron text-left">
-        <p>
-            <strong>ID</strong> {{ $promotion->id }}<br>
-            <strong>Promotion Name</strong> {{ $promotion->promotionName }}<br>
-            <strong>Description</strong> {{ $promotion->description }}<br>
-            <strong>IssueBy</strong> {{ $promotion->issueBy }}<br>
-            <strong>Value</strong> {{ $promotion->value }}<br>
-            <strong>Expired Date</strong> {{ $promotion->expired }}<br>
-        </p>
+      <table style="width:100%;">
+        <tr>
+          <td><strong>ID</strong></td>
+          <td>{{ $promotion->id }}</td>
+        </tr>
+        <tr>
+          <td><strong>Promotion Name</strong></td>
+          <td>{{ $promotion->promotionName }}</td>
+        </tr>
+        <tr>
+          <td><strong>Description</strong></td>
+          <td>{{ $promotion->description }}</td>
+        </tr>
+        <tr>
+          <td><strong>IssueBy</strong></td>
+          <td>{{ $promotion->issueBy }}</td>
+        </tr>
+        <tr>
+          <td><strong>Value</strong></td>
+          <td>{{ $promotion->value }}</td>
+        </tr>
+        <tr>
+          <td><strong>Expiration Date</strong></td>
+          <td>{{ $promotion->expired }}</td>
+        </tr>
+      </table>
     </div>
   </div>
 
