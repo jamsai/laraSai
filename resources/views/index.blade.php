@@ -310,9 +310,29 @@ part of Software Engineering class
 
                             <h3><a href="#">ข้าวต้มฟรี</a></h3>
 
+                            <p>สมภพข้าวต้มปลา ร่วมเป็นส่วนหนึ่งแสดงความยินดี เพียง 50 แต้มแจ่มใส แลกรับข้าวต้มฟรีได้เลยที่ร้าน ไม่มีเงื่อนไขใดๆ</p>
+
+                            <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!--price tag-->
+                        <span class="hot-tag br-red">ฟรี</span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+
+                    <div class="pricing-item">
+
+                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal1.jpg" alt="deal"></a>
+
+                        <div class="pricing-item-details">
+
+                            <h3><a href="#">ข้าวต้มฟรี</a></h3>
+
                             <p>ของฟรีอร่อยอยู่แล้ว</p>
 
-                            <a class="btn btn-danger" href="#">สั่งซื้อ</a>
+                            <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
@@ -332,7 +352,7 @@ part of Software Engineering class
 
                             <p>ของฟรีอร่อยอยู่แล้ว</p>
 
-                            <a class="btn btn-danger" href="#">สั่งซื้อ</a>
+                            <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
@@ -352,27 +372,7 @@ part of Software Engineering class
 
                             <p>ของฟรีอร่อยอยู่แล้ว</p>
 
-                            <a class="btn btn-danger" href="#">สั่งซื้อ</a>
-                            <div class="clearfix"></div>
-                        </div>
-                        <!--price tag-->
-                        <span class="hot-tag br-red">$16</span>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-
-                    <div class="pricing-item">
-
-                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal1.jpg" alt="deal"></a>
-
-                        <div class="pricing-item-details">
-
-                            <h3><a href="#">ข้าวต้มฟรี</a></h3>
-
-                            <p>ของฟรีอร่อยอยู่แล้ว</p>
-
-                            <a class="btn btn-danger" href="#">สั่งซื้อ</a>
+                            <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
@@ -392,77 +392,32 @@ part of Software Engineering class
     <div id="reservation" class="light-wrapper">
         <section class="ss-style-top"></section>
         <div class="container inner">
-            <h2 class="section-title text-center">ร่วมเป็นส่วนหนึ่งกับแจ่มใส</h2>
-            <p class="lead main text-center">เอาจริงดิ</p>
+            <h2 class="section-title text-center">ติดต่อ สอบถาม และคำถามที่พบบ่อย</h2>
+            <p class="lead main text-center"> </p>
             <div class="row">
                 <div class="col-md-6">
                     <form class="form form-table" method="post" name="">
-                        <div class="form-group">
-                            <h4>สมัครสมาชิกกับเราเพื่อรับสิทธิประโยชน์มากมาย แน่นอนว่าฟรีไม่มีค่าใช้จ่ายใดๆ</h4>
-                        </div>
+                            <h2><i class="fa fa-question-circle" aria-hidden="true"></i><strong> FAQ :</strong></h4>
+                <strong>Q : แต้มแจ่มใสคืออะไร?</strong><br>
+                &nbsp;&nbsp;&nbsp;แต้มแจ่มใส เป็นแต้มที่เพิ่มความสะดวกให้ผู้ใช้งาน เรารวบรวมร้านค้าที่เข้าร่วมกับแจ่มใสและใช้แต้มนี้ร่วมกัน เพื่อสิทธิประโยชน์ในการแลกของรางวัล และส่วนลดมากมาย<br>
+                <strong>Q : สามารถได้แต้มแจ่มใสจากไหนบ้าง</strong><br>
+                &nbsp;&nbsp;&nbsp;แต้มแจ่มใสมีวิธีได้มาหลายวิธี<br>
+        				<i class="fa fa-check"></i> จากร้านค้าที่เข้าร่วมกับแจ่มใส เมื่อคุณใช้บริการตรงตามเงื่อนไข พนักงานจะถาม ID/เบอร์โทรศัพท์คุณเพื่อสะสมคะแนน<br>
+        				<i class="fa fa-check"></i> จากการนำโค้ดมากรอกใน Profile ที่ปุ่ม <font color="#b98eb1"><i class="fa fa-exchange"></i> ใช้แต้มแลกรางวัล</font> โดยโค้ดจะได้จากการร่วมกิจกรรมจากทางร้านค้า หรืออื่นๆ<br>
+        				<i class="fa fa-check"></i> 100 แต้ม ทันทีที่สมัครสมาชิก<br>
+                <strong>Q : นำแต้มไปแลกโปรโมชั่นอย่างไร</strong><br>
 
-                        <div class="row">
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="first_name1">first name</label>
-                            <input class="form-control hint" type="text" id="first_name1" name="first_name" placeholder="First name" required="">
-                          </div>
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="last_name1">last name</label>
-                            <input class="form-control hint" type="text" id="last_name1" name="last_name" placeholder="Last name" required="">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="email1">email</label>
-                            <input class="form-control hint" type="email" id="email1" name="email" placeholder="Email@domain.com" required="">
-                          </div>
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="phone1">phone</label>
-                            <input class="form-control hint" type="text" id="phone1" name="phone" placeholder="Phone" required="">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="reserv_date1">reservation date</label>
-                            <input class="form-control datepicker hasDatepicker hint" type="text" id="reserv_date1" name="reserv_date" placeholder="Reservation date" required="">
-                          </div>
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="numb_guests1">number of guests</label>
-                            <input class="form-control hint" type="text" id="numb_guests1" name="numb_guests" placeholder="Number of guests" required="">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="alt_reserv_date1">time from</label>
-                            <input class="form-control datepicker hasDatepicker hint" type="text" id="alt_reserv_date1" name="alt_reserv_date" placeholder="Time from" required="">
-                          </div>
-                          <div class="col-lg-6 col-md-6 form-group">
-                            <label class="sr-only" for="time1">time</label>
-                            <input class="form-control timepicker ui-timepicker-input hint" type="text" id="time1" name="time" placeholder="Time to" required="" autocomplete="off">
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-12 col-md-12">
-                            <p></p>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-lg-12 col-md-12">
-                            <button type="submit" class="btn btn-danger btn-lg">Reserve!</button>
-                          </div>
-                        </div>
-                      </form>
                 </div><!-- col-md-6 -->
                 <div class="col-md-5 col-md-offset-1">
 
                     <h3><i class="fa fa-info-circle fa-fw"></i>ติดต่อเรา</h3>
-                    <p>Mon to Sat: 6:00 PM -  1:00 AM<br>Sun: 5:30 PM - 12:00 AM</p>
+                    <p>Mon to Sat: 10:00 AM -  7:00 PM<br>Sun: 12:30 PM - 9:00 PM</p>
 
                     <h3><i class="fa fa-map-marker fa-fw"></i>Directions</h3>
                     <p>ภาควิชาวิศวกรรมคอมพิวเตอร์ อาคารปฏิบัติการวิศวกรรม 2 (ECC) สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</p>
 
                     <h3><i class="fa fa-mobile fa-fw"></i>Contacts</h3>
-                    <p>Email: <a href="mailto:zreast@gmail.com">zreast@gmail.com</a></p>
+                    <p>Email: info@jamsai.arcanaforce.net</p>
                     <p>Phone: +66 081-234-5678</p>
 
                 </div><!-- col-md-6 -->
