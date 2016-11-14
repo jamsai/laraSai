@@ -125,7 +125,7 @@
             <td>
 
                 <!-- delete the nerd (uses the destroy method DESTROY /nerds/{id} -->
-                @if (Auth::user()->type==2 && $value->issueBy == Auth::user()->username)<!-- shop keeper -->
+                @if (Auth::user()->type==2 && $value->issueBy == Auth::user()->name)<!-- shop keeper -->
                   {{ Form::open(array('url' => 'promotions/' . $value->id, 'class' => 'pull-right')) }}
                      {{ Form::hidden('_method', 'DELETE') }}
                      {{ Form::submit('Delete this promotion', array('class' => 'btn btn-md')) }}
@@ -138,7 +138,7 @@
                 <a class="action-button shadow animate blue" href="{{ URL::to('promotions/' . $value->id) }}" style= "font-size:1.6rem;">Show</a>
 
                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
-                @if (Auth::user()->type==2 && $value->issueBy == Auth::user()->username)<!-- shop keeper -->
+                @if (Auth::user()->type==2 && $value->issueBy == Auth::user()->name)<!-- shop keeper -->
                   <a class="action-button shadow animate yellow" href="{{ URL::to('promotions/' . $value->id . '/edit') }}" style= "font-size:1.6rem;">Edit</a>
                 @endif
                 @if (Auth::user()->type==1)<!-- customer -->
