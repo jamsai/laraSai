@@ -40,7 +40,7 @@
 			</div>
 		</div>
 	</div>
-	<a href="#" style="font-weight: bold;"><i class="fa fa-gear"></i>&nbsp;&nbsp;ยืนยันการใช้โปรโมชั่น - Verify Promotions <span class="pull-right alert-numb">{{ DB::table('usergotrewards')->count() }}</span></a>
+	<a href="#" style="font-weight: bold;"><i class="fa fa-gear"></i>&nbsp;&nbsp;ยืนยันการใช้โปรโมชั่น - Verify Promotions</a>
 	<div class="sub-nav">
 		<a href="/rewards"><i class="fa fa-sliders"></i> <font style="font-weight: bold;">Verify Management</font></a>
 	</div>
