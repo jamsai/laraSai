@@ -96,7 +96,7 @@
       <thead>
           <tr>
               <td><strong>ID</strong></td>
-              <td><strong>User Name</strong></td>
+              <td><strong>Username</strong></td>
               <td><strong>Promotion</strong></td>
 
               <td><strong>Actions</strong></td>

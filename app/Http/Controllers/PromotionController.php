@@ -131,7 +131,7 @@ class PromotionController extends Controller
         //return var_dump($promotion);
         $id = Auth::id();
         $type = DB::table('users')->where('id', $id)->value('type');
-        $name = DB::table('users')->where('id', $id)->value('name');
+        $name = DB::table('users')->where('id', $id)->value('username');
         $score = DB::table('users')->where('id', $id)->value('score');
 
           if($score>=$promotion->value){
