@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>My Jamsai</title>
-    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
     <!-- Styles -->
     <link rel='stylesheet prefetch' href='css/bootstrap.min.css'>
     <link rel='stylesheet prefetch' href='css/bootstrap-theme.min.css'>
@@ -22,81 +22,6 @@
     }
         .fa-btn {
             margin-right: 6px;
-        }
-        .animate
-        {
-        	transition: all 0.1s;
-        	-webkit-transition: all 0.1s;
-        }
-
-        .action-button
-        {
-        	position: relative;
-        	padding: 5px 15px;
-          margin: 0px 10px 10px 0px;
-
-        	border-radius: 10px;
-        	color: #FFF;
-        	text-decoration: none;
-        }
-
-        .blue
-        {
-        	background-color: #3498DB;
-        	border-bottom: 5px solid #2980B9;
-        	text-shadow: 0px -2px #2980B9;
-        }
-
-        .red
-        {
-        	background-color: #E74C3C;
-        	border-bottom: 5px solid #BD3E31;
-        	text-shadow: 0px -2px #BD3E31;
-        }
-
-        .green
-        {
-        	background-color: #82BF56;
-        	border-bottom: 5px solid #669644;
-        	text-shadow: 0px -2px #669644;
-        }
-
-        .yellow
-        {
-        	background-color: #e1ae13;
-        	border-bottom: 5px solid #b68c10;
-        	text-shadow: 0px -2px #b68c10;
-        }
-
-        .gray
-        {
-        	background-color: #989caf;
-        	border-bottom: 5px solid #666b84;
-        	text-shadow: 0px -2px #666b84;
-        }
-
-        .purple
-        {
-        	background-color: #b98eb1;
-        	border-bottom: 5px solid #a06797;
-        	text-shadow: 0px -2px #a06797;
-        }
-
-        .action-button:active
-        {
-          text-decoration: none;
-        	transform: translate(0px,5px);
-          -webkit-transform: translate(0px,5px);
-        }
-
-        /* Animate Background Image */
-        @-webkit-keyframes aitf {
-          0% {
-            background-position: 0% 50%;
-          }
-          100% {
-            background-position: 100% 50%;
-          }
         }
     </style>
 </head>
@@ -122,10 +47,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    @if (Auth::guest())
-                    @else
                     <li><a href="{{ url('/home') }}"><i class="fa fa-user"></i> My Profile</a></li>
-                    @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->

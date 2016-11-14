@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Promotions</title>
-  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
   <!-- Styles -->
   <link rel='stylesheet prefetch' href='../css/bootstrap.min.css'>
   <link rel='stylesheet prefetch' href='../css/bootstrap-theme.min.css'>
@@ -91,38 +91,20 @@
   <br><br>
   <div class="container">
     <div class="jumbotron text-left">
-      <table style="width:100%;">
-        <tr>
-          <td><strong>ID</strong></td>
-          <td>{{ $promotion->id }}</td>
-        </tr>
-        <tr>
-          <td><strong>Name</strong></td>
-          <td>{{ $promotion->promotionName }}</td>
-        </tr>
-        <tr>
-          <td><strong>Description</strong></td>
-          <td>{{ $promotion->description }}</td>
-        </tr>
-        <tr>
-          <td><strong>Issue by</strong></td>
-          <td>{{ $promotion->issueBy }}</td>
-        </tr>
-        <tr>
-          <td><strong>Value</strong></td>
-          <td>{{ $promotion->value }}</td>
-        </tr>
-        <tr>
-          <td><strong>Expire</strong></td>
-          <td>{{ $promotion->expired }}</td>
-        </tr>
-      </table>
+        <p>
+            <strong>ID</strong> {{ $promotion->id }}<br>
+            <strong>Promotion Name</strong> {{ $promotion->promotionName }}<br>
+            <strong>Description</strong> {{ $promotion->description }}<br>
+            <strong>IssueBy</strong> {{ $promotion->issueBy }}<br>
+            <strong>Value</strong> {{ $promotion->value }}<br>
+            <strong>Expired Date</strong> {{ $promotion->expired }}<br>
+        </p>
     </div>
   </div>
 
 <div class="container" align="center">
   <a href="javascript:history.go(-1)" class="action-button shadow animate blue">Back</a>
-  @if (Auth::user()->type==2 && $promotion->issueBy == Auth::user()->username)
+  @if(Auth::user()->type == 2)
     <a class="action-button shadow animate yellow" href="{{ URL::to('promotions/' . $promotion->id . '/edit') }}">Edit</a>
   @endif
 </div>

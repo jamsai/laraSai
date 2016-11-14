@@ -1,15 +1,28 @@
 <!--
         Zreast the Nerazzurri
 
-Jamsai | Easy Reward Piont Gatherer
+Color Palette
+- http://colorpalettes.net/color-palette-3062
 
-BETA Version 1.0
+BackEnd Template
+- https://colorlib.com/wp/free-html5-admin-dashboard-templates/
 
-Developer :
-Zreast, pongsakm2007, Halloweenrr, Anurak, Clavis, Sweetyblack
-as Computer Engineering KMITL
+Not forget it
+- http://www.siamhtml.com/%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%81%E0%B8%95%E0%B8%81%E0%B8%95%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87-font-size-%E0%B9%81%E0%B8%9A%E0%B8%9A-percent-em-px-pt/
 
-part of Software Engineering class
+Current Requirement
+
+- Add logged as user to navbar
+- Log in modal
+
+Done
+
+# edit Header Photo to some great material
+# Add Site Description
+# localize CDN
+# init webfont
+# Pick some cool palette
+# Design jamsai icon
 
 -->
 
@@ -78,17 +91,10 @@ part of Software Engineering class
             </ul>
         </div><!--/.navbar-collapse -->
 
-        <div class="fab-container">
-            @if (Auth::check())
-            <a href="/home"><div tooltip="View My Profile" class="profile fab"></div></a>
-            @else
-            <a href="/login"><div tooltip="Log In" class="profile fab"></div></a>
-            @endif
+        <div class="fab-container"><a href="/home">
+            <div tooltip="View My Profile" class="profile fab"></div></a>
           <div tooltip="Back To Top" class="top fab"></div>
         </div>
-
-
-
         </div><!-- container -->
     </div><!-- menu -->
 
@@ -118,12 +124,8 @@ part of Software Engineering class
             @if (Auth::guest())
               <br><br><br>
             <div align="center" id="buttonoverlay">
-              <a href="/register" class="action-button shadow animate purple" style="font-size: 3.5rem;">ร่วมเป็นส่วนหนึ่งกับแจ่มใส</a>
+              <a href="/register" class="action-button shadow animate purple" style="font-size: 4.0rem;">ร่วมเป็นส่วนหนึ่งกับแจ่มใส</a>
             </div>
-            <div align="center">
-              <p><br><font size="5rem"><font color="#ff3e5a">พิเศษ</font> สมัครแจ่มใสวันนี้ <font color="#800080">รับฟรี 100 แต้มทันที</font></font></p>
-            </div>
-
             @endif
 
             <br><br>
@@ -210,35 +212,38 @@ part of Software Engineering class
                     <div class="menu-titles"><h1 class="">สมภพข้าวต้มปลา</h1></div>
                     <div class="menu-items ">
                         <ul>
-                            <li>ข้าวต้มปลาหน้าเก๋ง<br>
-                            เจ้าดังของชลบุรี</li>
+                            <li>ข้าวต้มปลาหน้าเก๋ง</li>
+                            <li>เจ้าดังของชลบุรี</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3">
-                    <div class="menu-images "><img src="assets/images/shop2.jpg" alt="Shop"></div>
-                    <div class="menu-titles"><h1 class="">ร้านหนังสือดอกหญ้า</h1></div>
+                    <div class="menu-images "><img src="assets/images/shop1.jpg" alt="Shop"></div>
+                    <div class="menu-titles"><h1 class="">สมภพข้าวต้มปลา</h1></div>
                     <div class="menu-items ">
                         <ul>
-                            <li>หนังสือ นิตยสาร วรรณกรรมเยาวชน จากสำนักพิมพ์ดอกหญ้า</li>
+                            <li>ข้าวต้มปลาหน้าเก๋ง</li>
+                            <li>เจ้าดังของชลบุรี</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3">
-                    <div class="menu-images "><img src="assets/images/shop3.jpg" alt="Shop"></div>
-                    <div class="menu-titles"><h1 class="">สนองโอษฐ์</h1></div>
+                    <div class="menu-images "><img src="assets/images/shop1.jpg" alt="Shop"></div>
+                    <div class="menu-titles"><h1 class="">สมภพข้าวต้มปลา</h1></div>
                     <div class="menu-items ">
                         <ul>
-                            <li>Coffee Shop หวาน นุ่ม ละมุน พระจอมเกล้าลาดกระบัง</li>
+                            <li>ข้าวต้มปลาหน้าเก๋ง</li>
+                            <li>เจ้าดังของชลบุรี</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-3 col-md-3">
-                    <div class="menu-images "><img src="assets/images/shop4.jpg" alt="Shop"></div>
-                    <div class="menu-titles"><h1 class="">ชาชักโกอิน</h1></div>
+                    <div class="menu-images "><img src="assets/images/shop1.jpg" alt="Shop"></div>
+                    <div class="menu-titles"><h1 class="">สมภพข้าวต้มปลา</h1></div>
                     <div class="menu-items ">
                         <ul>
-                            <li>เกกี 4 ลาดกระบัง ชิมชาใต้ สบายๆกับเพลงเพื่อชีวิต</li>
+                            <li>ข้าวต้มปลาหน้าเก๋ง</li>
+                            <li>เจ้าดังของชลบุรี</li>
                         </ul>
                     </div>
                 </div>
@@ -246,38 +251,42 @@ part of Software Engineering class
 
             <div class="row">
               <div class="col-sm-3 col-md-3">
-                  <div class="menu-images "><img src="assets/images/shop5.jpg" alt="Shop"></div>
-                  <div class="menu-titles"><h1 class="">The Snowcap Bingsoo</h1></div>
+                  <div class="menu-images "><img src="assets/images/shop1.jpg" alt="Shop"></div>
+                  <div class="menu-titles"><h1 class="">สมภพข้าวต้มปลา</h1></div>
                   <div class="menu-items ">
                       <ul>
-                          <li>ใครไม่ซู บิงซู ,อยู่ลาดกระบัง</li>
+                          <li>ข้าวต้มปลาหน้าเก๋ง</li>
+                          <li>เจ้าดังของชลบุรี</li>
                       </ul>
                   </div>
               </div>
               <div class="col-sm-3 col-md-3">
-                  <div class="menu-images "><img src="assets/images/shop6.jpg" alt="Shop"></div>
-                  <div class="menu-titles"><h1 class="">Hikaru</h1></div>
+                  <div class="menu-images "><img src="assets/images/shop1.jpg" alt="Shop"></div>
+                  <div class="menu-titles"><h1 class="">สมภพข้าวต้มปลา</h1></div>
                   <div class="menu-items ">
                       <ul>
-                          <li>Japanese Fusion พาซีโอ้ ลาดกระบัง</li>
+                          <li>ข้าวต้มปลาหน้าเก๋ง</li>
+                          <li>เจ้าดังของชลบุรี</li>
                       </ul>
                   </div>
               </div>
               <div class="col-sm-3 col-md-3">
-                  <div class="menu-images "><img src="assets/images/shop7.jpg" alt="Shop"></div>
-                  <div class="menu-titles"><h1 class="">พี่วิ ไข่เจียว</h1></div>
+                  <div class="menu-images "><img src="assets/images/shop1.jpg" alt="Shop"></div>
+                  <div class="menu-titles"><h1 class="">สมภพข้าวต้มปลา</h1></div>
                   <div class="menu-items ">
                       <ul>
-                          <li>ใครไม่เจียว พี่วิเจียว ,ไข่เจียว เจียวดาว ถ้าจะเอาไข่ดาวไปทอดแดกเอง</li>
+                          <li>ข้าวต้มปลาหน้าเก๋ง</li>
+                          <li>เจ้าดังของชลบุรี</li>
                       </ul>
                   </div>
               </div>
               <div class="col-sm-3 col-md-3">
-                  <div class="menu-images "><img src="assets/images/shop8.jpg" alt="Shop"></div>
-                  <div class="menu-titles"><h1 class="">Wine Connection</h1></div>
+                  <div class="menu-images "><img src="assets/images/shop1.jpg" alt="Shop"></div>
+                  <div class="menu-titles"><h1 class="">สมภพข้าวต้มปลา</h1></div>
                   <div class="menu-items ">
                       <ul>
-                          <li>International Food with Great Wine @Paseo Ladkrabang</li>
+                          <li>ข้าวต้มปลาหน้าเก๋ง</li>
+                          <li>เจ้าดังของชลบุรี</li>
                       </ul>
                   </div>
               </div>

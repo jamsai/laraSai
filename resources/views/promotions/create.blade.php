@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Promotions</title>
-  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
   <!-- Styles -->
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap.min.css'>
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap-theme.min.css'>
@@ -48,7 +48,7 @@
               <ul class="nav navbar-nav">
                   <li><a href="/promotions"><i class="fa fa-star"></i> Promotions</a></li>
               </ul>
-
+            
               <!-- Right Side Of Navbar -->
               <ul class="nav navbar-nav navbar-right">
                   <!-- Authentication Links -->
@@ -88,19 +88,23 @@
   {!! Form::open(['action' => 'ShopController@createPromotion', 'method' => 'get'])!!}
   <div class="container">
   <div class="form-group">
-      {!! Form::label('PromotionName', 'Promotion Name :') !!}
+      {!! Form::label('PromotionName', 'Promotion Name:') !!}
       {!! Form::text('promotionName', null, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
-      {!! Form::label('Description', 'Description :') !!}
+      {!! Form::label('Description', 'Description:') !!}
       {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
-      {!! Form::label('Value', 'Value :') !!}
+      {!! Form::label('Value', 'Value:') !!}
       {!! Form::text('value', null, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
-      {!! Form::label('expired', 'Expire date :', ['class' => 'control-label']) !!}
+      {!! Form::label('issueBy', 'Issue By') !!}
+      {!! Form::text('issueBy', null, ['class' => 'form-control']) !!}
+  </div>
+  <div class="form-group">
+      {!! Form::label('expired', 'Expire date:', ['class' => 'control-label']) !!}
       {!! Form::input('bday', 'bday', date('Y-m-d'), ['class' => 'form-control']) !!}
 
   </div>

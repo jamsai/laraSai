@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Customers</title>
-  <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
   <!-- Styles -->
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap.min.css'>
   <link rel='stylesheet prefetch' href='{{ URL::to('/') }}/css/bootstrap-theme.min.css'>
@@ -88,38 +88,21 @@
 
   <div class="container">
     <div class="jumbotron text-left">
-      <table style="width:100%;">
-        <tr>
-          <td><strong>ID</strong></td>
-          <td>{{ $user->id }}</td>
-        </tr>
-        <tr>
-          <td><strong>Name</strong></td>
-          <td>{{ $user->name }}</td>
-        </tr>
-        <tr>
-          <td><strong>User Name</strong></td>
-          <td>{{ $user->username }}</td>
-        </tr>
-        <tr>
-          <td><strong>E-mail</strong></td>
-          <td>{{ $user->email }}</td>
-        </tr>
-        <tr>
-          <td><strong>Phone Number</strong></td>
-          <td>{{ $user->phonenumber }}</td>
-        </tr>
-        <tr>
-          <td><strong>Point</strong></td>
-          <td>{{ $user->score }}</td>
-        </tr>
-      </table>
+
+        <p align>
+            <strong>ID</strong> {{ $user->id }}<br>
+            <strong>Name</strong> {{ $user->name }}<br>
+            <strong>User Name</strong> {{ $user->username }}<br>
+            <strong>E-mail</strong> {{ $user->email }}<br>
+            <strong>Phone Number</strong> {{ $user->phonenumber }}<br>
+            <strong>Point</strong> {{ $user->score }}<br>
+        </p>
     </div>
   </div>
 
   <div class="container" align="center">
     <a href="javascript:history.go(-1)" class="action-button shadow animate blue">Back</a>
-    @if(Auth::user()->type == 3)
+    @if(Auth::user()->type == 2)
       <a class="action-button shadow animate yellow" href="{{ URL::to('users/' . $user->id . '/edit') }}">Edit</a>
     @endif
   </div>
