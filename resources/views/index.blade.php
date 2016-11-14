@@ -310,13 +310,13 @@ part of Software Engineering class
 
                             <h3><a href="#">ข้าวต้มฟรี</a></h3>
 
-                            <p>สมภพข้าวต้มปลา ร่วมเป็นส่วนหนึ่งแสดงความยินดี เพียง 50 แต้มแจ่มใส แลกรับข้าวต้มฟรีได้เลยที่ร้าน ไม่มีเงื่อนไขใดๆ</p>
+                            <p>สมภพข้าวต้มปลา ร่วมเป็นส่วนหนึ่งแสดงความยินดี แลกรับข้าวต้มฟรีได้เลยที่ร้าน</p>
 
                             <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
-                        <span class="hot-tag br-red">ฟรี</span>
+                        <span class="hot-tag br-red">50pt</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -324,19 +324,19 @@ part of Software Engineering class
 
                     <div class="pricing-item">
 
-                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal1.jpg" alt="deal"></a>
+                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal2.jpg" alt="deal"></a>
 
                         <div class="pricing-item-details">
 
-                            <h3><a href="#">ข้าวต้มฟรี</a></h3>
+                            <h3><a href="#">กือโป๊ะรูสมิแล</a></h3>
 
-                            <p>ของฟรีอร่อยอยู่แล้ว</p>
+                            <p>หัวข้าวเกรียบปลาแท้ กินคู่กับชา วันนี้ที่ชาชักโกอิน ฟรีทันทีเมื่อสั่งชาชัก 1 แก้ว</p>
 
                             <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
-                        <span class="hot-tag br-red">$16</span>
+                        <span class="hot-tag br-red">30pt</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -344,19 +344,19 @@ part of Software Engineering class
 
                     <div class="pricing-item">
 
-                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal1.jpg" alt="deal"></a>
+                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal3.jpg" alt="deal"></a>
 
                         <div class="pricing-item-details">
 
-                            <h3><a href="#">ข้าวต้มฟรี</a></h3>
+                            <h3><a href="#">สตรอว์เบอรี่บิงซู 1 แถม 1</a></h3>
 
-                            <p>ของฟรีอร่อยอยู่แล้ว</p>
+                            <p>เมื่อสั่งสตรอว์เบอรี่บิงซู 1 ถ้วย แถมฟรีทันที 1 ถ้วย เฉพาะลูกค้าแจ่มใสเท่านั้น</p>
 
                             <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
-                        <span class="hot-tag br-red">$16</span>
+                        <span class="hot-tag br-red">100pt</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -364,24 +364,29 @@ part of Software Engineering class
 
                     <div class="pricing-item">
 
-                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal1.jpg" alt="deal"></a>
+                        <a href="#"><img class="img-responsive img-thumbnail" src="assets/images/deal4.jpg" alt="deal"></a>
 
                         <div class="pricing-item-details">
 
-                            <h3><a href="#">ข้าวต้มฟรี</a></h3>
+                            <h3><a href="#">หนังสือ เลี้ยงลูกให้เป็นคนปกติ ราคาพิเศษ</a></h3>
 
-                            <p>ของฟรีอร่อยอยู่แล้ว</p>
-
+                            <p>จากไม่รู้กี่บาท เหลือเพียง 39 บาทเท่านั้นเมื่อซื้อที่ร้านหนังสือดอกหญ้าทุกสาขา</p>
+                              
                             <a class="action-button shadow animate red" href="#">ดูรายละเอียด</a>
                             <div class="clearfix"></div>
                         </div>
                         <!--price tag-->
-                        <span class="hot-tag br-red">$16</span>
+                        <span class="hot-tag br-red">50pt</span>
                         <div class="clearfix"></div>
                     </div>
                 </div>
             </div>
-
+            <br><br>
+            @if (Auth::user())
+            <div align="center" id="buttonoverlay">
+              <a href="/promotions" class="action-button shadow animate yellow" style="font-size: 3.5rem;">ดูโปรโมชั่นทั้งหมด</a>
+            </div>
+            @endif
         </div>
         <!-- /.container -->
     </div><!-- /#special-offser -->
