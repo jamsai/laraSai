@@ -88,23 +88,19 @@
   {!! Form::open(['action' => 'ShopController@createPromotion', 'method' => 'get'])!!}
   <div class="container">
   <div class="form-group">
-      {!! Form::label('PromotionName', 'Promotion Name:') !!}
+      {!! Form::label('PromotionName', 'Promotion Name :') !!}
       {!! Form::text('promotionName', null, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
-      {!! Form::label('Description', 'Description:') !!}
+      {!! Form::label('Description', 'Description :') !!}
       {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
-      {!! Form::label('Value', 'Value:') !!}
+      {!! Form::label('Value', 'Value :') !!}
       {!! Form::text('value', null, ['class' => 'form-control']) !!}
   </div>
   <div class="form-group">
-      {!! Form::label('issueBy', 'Issue By') !!}
-      {!! Form::text('issueBy', Auth::user()->name, ['class' => 'form-control']) !!}
-  </div>
-  <div class="form-group">
-      {!! Form::label('expired', 'Expire date:', ['class' => 'control-label']) !!}
+      {!! Form::label('expired', 'Expire date :', ['class' => 'control-label']) !!}
       {!! Form::input('bday', 'bday', date('Y-m-d'), ['class' => 'form-control']) !!}
 
   </div>

@@ -102,10 +102,6 @@
       {!! Form::label('Value', 'Value') !!}
       {!! Form::text('value', $promotion['value'], ['class' => 'form-control']) !!}
   </div>
-  <div class="form-group">
-      {!! Form::label('issueBy', 'Issue By') !!}
-      {!! Form::text('issueBy', $promotion['issueBy'], ['class' => 'form-control']) !!}
-  </div>
   <!-- <div class="form-group">
       {!! Form::label('bday', 'Expired:', ['class' => 'col-md-4 control-label']) !!}
         <div class="col-md-6">
